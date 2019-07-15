@@ -22,6 +22,15 @@
   }
 }
 
+.title {
+  font-weight: 600;
+  font-size: 42px;
+  line-height: 46px;
+  background: $mainGradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .visually-hidden {
   position: absolute;
   overflow: hidden;

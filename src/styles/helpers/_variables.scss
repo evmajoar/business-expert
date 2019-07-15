@@ -8,9 +8,14 @@ $commonWidth: 1200px;
 $gutter: 15px;
 
 // Fonts
-$ProximaNova: 'ProximaNova', Arial, Tahoma, sans-serif;
+$Akrobat: 'Akrobat', Arial, Tahoma, sans-serif;
 
 // Colors
-$white: #FFF;
-$black: #000;
- 
+$white: #ffffff;
+$black: #000000;
+$darkGrey: #333333;
+$lightGrey: #737373;
+$violet: #3e3ccc;
+$darkRed: #902121;
+$mainGradient: linear-gradient(to right, $darkRed, $violet);
+$reverseGradient: linear-gradient(to left, $darkRed, $violet)
