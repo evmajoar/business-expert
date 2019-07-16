@@ -1,0 +1,81 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+.free-correction {
+  padding: 100px 0 107px;
+  background-color: $white;
+
+  &__container {
+    align-items: center;
+    max-width: 1030px;
+  }
+
+  &__wrapper {
+    max-width: 310px;
+    margin-right: 80px;
+  }
+
+  &__paragraph {
+    margin-top: 44px;
+  }
+
+  &__list {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &--circle {      
+      width: 273px;
+      height: 273px;
+      margin-right: 70px;
+      background: url($imageDir + "diagram-circle.svg") no-repeat;      
+    }
+
+    &--part {
+      position: relative;
+      &::before {
+        @include pseudo;
+        top: -15px;
+        right: 75px;
+        width: 284px;
+        height: 1px;
+        background-color: #dddddd;
+      }
+    }    
+  }
+
+  &__text {
+    display: flex;
+    max-width: 240px;
+    &--small {
+      flex-direction: column;
+      max-width: 137px;
+      font-size: 12px;
+      line-height: 14px;
+      text-align: center;
+    }
+  }
+
+  &__percent {
+    display: block;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 60px;
+    background: $mainGradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    &--circle {
+      margin-bottom: 10px;
+
+    }
+    &--part {
+      margin-right: 22px;
+    }
+  }
+}
