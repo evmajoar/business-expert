@@ -1,0 +1,59 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+
+.top-bar {
+  &__container {
+    padding-left: 85px;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: calc(100% - 250px);
+  }
+
+  &__item {
+    &--address {
+      max-width: 160px;
+      margin-right: 30px;
+    }
+    &--email {
+      margin-right: 35px;
+    }
+    &--phone {
+      display: flex;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    color: inherit;
+    &--phone {
+      margin-right: 45px;
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    fill: $white;
+    &--email {
+      margin-right: 32px;
+    }
+    &--phone {
+      margin-right: 16px;
+    }
+    &--arrow {
+      margin-left: 20px;
+      fill: $darkGrey;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    color: $darkGrey;
+  }  
+}

@@ -1,18 +1,45 @@
-%svg-common {
-	background: url("../icons/sprite.svg") no-repeat;
+%-svg-icon-arrow-right-dims {
+	width: 26px;
+	height: 13px;
 }
 
-%-svg-icon-ok {
-	@extend %svg-common;
-	background-position: 0 0;
-	width: 10.8px;
-	height: 18px;
+%-svg-icon-envelope-dims {
+	width: 24px;
+	height: 17px;
 }
 
-%-svg-icon-vk {
-	@extend %svg-common;
-	background-position: 0 98.64094695309076%;
-	width: 19.2px;
-	height: 10.752px;
+%-svg-icon-guarantees-fifth-dims {
+	width: 46px;
+	height: 46px;
+}
+
+%-svg-icon-guarantees-first-dims {
+	width: 44px;
+	height: 44px;
+}
+
+%-svg-icon-guarantees-fourth-dims {
+	width: 44px;
+	height: 46px;
+}
+
+%-svg-icon-guarantees-second-dims {
+	width: 44px;
+	height: 44px;
+}
+
+%-svg-icon-guarantees-sixth-dims {
+	width: 44px;
+	height: 44px;
+}
+
+%-svg-icon-guarantees-third-dims {
+	width: 44px;
+	height: 44px;
+}
+
+%-svg-icon-phone-dims {
+	width: 24px;
+	height: 24px;
 }
 

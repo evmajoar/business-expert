@@ -31,6 +31,17 @@
   -webkit-text-fill-color: transparent;
 }
 
+.button {
+  min-width: 187px;
+  min-height: 40px;
+  padding: 9px 20px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
 .visually-hidden {
   position: absolute;
   overflow: hidden;
