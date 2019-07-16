@@ -84,7 +84,7 @@
   }
 
   &__icon {
-    fill: $darkRed;
+    fill: url("#guarantees-gradient");
     flex-shrink: 0;
     margin-right: 20px;
     &--time {
