@@ -1,0 +1,15 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+
+.free-consultation {
+  &__form {
+    width: 100%;
+    max-width: 1030px;
+    margin: 0 auto;
+    padding: 42px 62px;
+    background-color: $darkRed;
+    background: radial-gradient(1431.90px at 116.07% 215.53%, $darkRed, $violet 100%);
+    border-radius: 25px;
+  }
+}
