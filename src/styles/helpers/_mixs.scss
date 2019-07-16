@@ -26,9 +26,11 @@
   font-weight: 600;
   font-size: 42px;
   line-height: 46px;
-  background: $mainGradient;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  &--gradient {
+    background: $mainGradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }  
 }
 
 .button {
@@ -40,6 +42,11 @@
   line-height: 19px;
   border-radius: 5px;
   background-color: #ffffff;
+  text-align: center;
+  &--round {
+    min-height: 50px;
+    border-radius: 50px;
+  }
 }
 
 .visually-hidden {
