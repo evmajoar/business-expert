@@ -1,0 +1,57 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+
+.output {
+  padding: 56px 0;
+  background-color: $white;
+
+  &__container {
+    padding-left: 85px;
+  }
+
+  &__image-wrapper {
+    margin-right: 65px;
+  }
+
+  &__list {
+    max-width: 360px;
+    margin-top: 25px;
+    counter-reset: number;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    &:not(:first-of-type) {
+      margin-top: 15px;
+    }
+    &::before {
+      content: "0" counter(number);
+      counter-increment: number;
+      margin-right: 20px;
+      font-weight: 600;
+      font-size: 42px;
+      line-height: 46px;
+      color: #cccccc;
+    }
+
+    &--active {
+      &::before {
+        background: $mainGradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    &:hover {
+      &::before {
+        background: $mainGradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+}
