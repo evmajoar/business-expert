@@ -3,6 +3,15 @@
 
 
 .free-consultation {
+  background-color: $white;
+  @include breakpoint(lg) {
+    background-color: $darkRed;
+    background: radial-gradient(1431.90px at 116.07% 215.53%, $darkRed, $violet 100%);
+  }
+  @include breakpoint(md) {
+    background: $white;
+  }
+
   &__form {
     width: 100%;
     max-width: 1030px;
@@ -11,5 +20,18 @@
     background-color: $darkRed;
     background: radial-gradient(1431.90px at 116.07% 215.53%, $darkRed, $violet 100%);
     border-radius: 25px;
+    @include breakpoint(el) {
+      padding: 42px 42px;
+    }
+    @include breakpoint(lg) {
+      max-width: 690px;
+      padding: 20px 0;
+      background: none;
+    }
+    @include breakpoint(md) {
+      padding: 25px 30px;
+      background-color: $darkRed;
+      background: radial-gradient(1431.90px at 116.07% 215.53%, $darkRed, $violet 100%);
+    }
   }
 }
