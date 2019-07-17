@@ -5,6 +5,12 @@
 .guarantees {
   padding: 62px 0 110px;
   background-color: $white;
+  @include breakpoint(lg) {
+    padding: 20px 0 70px;
+  }
+  @include breakpoint(md) {
+    padding: 20px 0 20px;
+  }
 
   &__container {
     flex-direction: column;
@@ -29,6 +35,13 @@
     width: 100%;
     max-width: 1030px;
     margin: 40px auto 0;
+    @include breakpoint(lg) {
+      max-width: 100%;
+      margin-top: 20px;
+    }
+    @include breakpoint(md) {
+      flex-direction: column;
+    }
   }
 
   &__item {
@@ -74,6 +87,17 @@
 
     &:hover .guarantees__icon {
       fill: $white;
+    }
+
+    @include breakpoint(lg) {
+      padding: 32px 15px 15px;
+      &--grow {
+        flex-grow: 1;
+      }
+    }
+    @include breakpoint(md) {
+      width: 100%;
+      padding: 32px;
     }
   }
 

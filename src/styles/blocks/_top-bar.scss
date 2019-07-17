@@ -113,6 +113,9 @@
       @include breakpoint(el) {
         margin-right: 10px;
       }
+      @include breakpoint(md) {
+        margin-right: 8px;
+      }
     }
     &--arrow {
       margin-left: 20px;
