@@ -8,6 +8,12 @@
     @include breakpoint(el) {
       padding-left: $gutter;
     }
+    @include breakpoint(md) {
+      align-items: center;
+    }
+    @media (max-width: 374px) {
+      flex-direction: column;     
+    }
   }
 
   &__list {
@@ -19,6 +25,15 @@
     @include breakpoint(lg) {
       align-items: flex-start;
       margin-top: 20px;
+    }
+    @include breakpoint(md) {
+      flex-direction: column;
+      margin-top: 0;
+    }
+    @media (max-width: 374px) {
+      width: 100%;
+      margin-top: 20px;
+      margin-right: auto;   
     }
   }
 
@@ -32,6 +47,9 @@
       @include breakpoint(lg) {
         max-width: 115px;
       }
+      @include breakpoint(md) {
+        display: none;
+      }
     }
     &--email {
       margin-right: 35px;
@@ -41,11 +59,26 @@
       @include breakpoint(lg) {
         min-width: 146px;
       }
+      @include breakpoint(md) {
+        margin-right: 0;
+        margin-left: auto;
+      }
+      @media (max-width: 374px) {
+        margin-right: auto;   
+      }
     }
     &--phone {
       display: flex;
       @include breakpoint(lg) {
         flex-direction: column;
+      }
+      @include breakpoint(md) {
+        margin-top: 10px;
+        margin-right: 0;
+        margin-left: auto;
+      }
+      @media (max-width: 374px) {
+        margin-right: auto;   
       }
     }
   }
@@ -99,6 +132,9 @@
       justify-content: center;
       min-width: 170px;
       margin-top: 15px;
+    }
+    @include breakpoint(md) {
+      min-width: 150px;
     }
   }  
 }
