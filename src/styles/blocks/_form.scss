@@ -6,6 +6,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   @include breakpoint(md) {
     flex-direction: column;
   }
@@ -14,46 +15,95 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-right: 40px;
-    width: calc(100% - 150px);
-    @include breakpoint(lg) {
-      margin-right: 15px;
+    flex-grow: 1;
+    
+    &--free-consultation {      
+      width: calc(100% - 150px);
+      margin-right: 40px;
+      @include breakpoint(lg) {
+        margin-right: 15px;
+      }
+      @include breakpoint(md) {
+        margin-right: 0;
+      }
     }
+
+    &--questions {
+      width: calc(100% - 248px);
+      margin-right: 50px;
+      @include breakpoint(lg) {
+        width: calc(100% - 220px);
+        margin-right: 20px;
+      }
+      @include breakpoint(md) {
+        margin-right: 0;
+      }
+    }
+    
     @include breakpoint(md) {
       flex-direction: column;
       width: 100%;
-      margin-right: 0;
     }
   }
 
-  &__button {
-    max-width: 150px;
+  &__button {    
     font-weight: 700;
     font-size: 18px;
-    line-height: 24px;
-    text-align: left;
-    color: $white;
+    line-height: 24px;  
     border: none;
-    background: transparent;
-    @include breakpoint(md) {
-      width: 100%;
-      max-width: 100%;
-      margin-top: 17px;
-      padding: 9px 10px;
-      text-align: center;
-      color: $darkGrey;
-      background-color: #F2F2F2;
-      border-radius: 50px;
+    &--free-consultation {
+      max-width: 150px;
     }
+
+    &--questions {
+      min-width: 248px;
+      min-height: 45px;
+      padding-left: 30px;
+      padding-right: 30px;
+      font-size: 14px;
+      line-height: 19px;
+      text-transform: uppercase;
+      @include breakpoint(lg) {
+        min-width: 220px;
+      }
+      @include breakpoint(md) {
+        margin-top: 20px;
+        min-width: 290px;
+      }
+    }
+
+    &--white {
+      text-align: left;
+      color: $white;
+      background: transparent;
+      @include breakpoint(md) {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 17px;
+        padding: 9px 10px;
+        text-align: center;
+        color: $darkGrey;
+        background-color: #F2F2F2;
+        border-radius: 50px;
+      }
+    }    
   }
 
   &__item {
-    width: calc((100% - 30px)/3);
-    max-width: 190px;
+    min-width: 150px;
+    &--free-consultation {
+      width: calc((100% - 30px)/3);
+      max-width: 190px;
+    }
     &--wide {
       flex-grow: 1;
       max-width: 246px;
     }
+
+    &--questions {
+      width: calc((100% - 50px)/2);
+    }
+
     &:not(:last-of-type) {
       margin-right: 15px;
     }
@@ -62,6 +112,10 @@
       &--wide {
         flex-grow: 1;
         max-width: 200px;
+      }
+      &--questions {
+        width: calc((100% - 20px)/2);
+        max-width: 220px;
       }
     }
     @include breakpoint(md) {
@@ -79,24 +133,38 @@
     display: flex;
     align-items: center;
     width: 100%;
+    min-height: 45px;
     padding: 12px 20px;
     border-radius: 50px;
-    border: 1px solid $white;
-    @include breakpoint(lg) {
-      padding: 8px 18px;
+    border: 1px solid $darkGrey;
+    &--white {
+      border-color: $white;
     }
+    &--small {
+      @include breakpoint(lg) {
+        min-height: 32px;
+        padding: 8px 18px;
+      }
+    }    
   }
 
   &__icon {
-    fill: $white;
-    @include breakpoint(lg) {
-      width: 12px;
-      height: 12px;
+    &--white {
+      fill: $white;
     }
-    @include breakpoint(md) {
-      width: 20px;
-      height: 20px;
+    &--blue {
+      fill: #1C4F95;
     }
+    &--small {
+      @include breakpoint(lg) {
+        width: 12px;
+        height: 12px;
+      }
+      @include breakpoint(md) {
+        width: 20px;
+        height: 20px;
+      }
+    }    
   }
 
   &__input {
@@ -107,36 +175,60 @@
     height: 100%;
     padding: 12px 20px 12px 50px;
     font-size: 18px;
-    line-height: 22px;
-    color: $white;
+    line-height: 22px;    
     border: none;
     border-radius: 50px;
-    background: transparent;
+    background: transparent;  
     @include placeholder {
       font-size: 18px;
       line-height: 22px;
-      color: $white;
-      opacity: 1;
-      @include breakpoint(lg) {
-        font-size: 12px;
-        line-height: 4px;
-      }
-      @include breakpoint(md) {
-        font-size: 18px;
-        line-height: 12px;
-      }
+      color: $darkGrey;      
     }
     @include placeholderHidden;
 
+    &--small {
+      @include placeholder {
+        @include breakpoint(lg) {
+          font-size: 12px;
+          line-height: 4px;
+        }
+        @include breakpoint(md) {
+          font-size: 18px;
+          line-height: 12px;
+        }
+      }
+    }
+
+    &--white {
+      color: $white;
+      @include placeholder {
+        color: $white;
+        opacity: 1;
+      }
+    }
+
+    &--blue {
+      color: #1C4F95;
+      @include placeholder {
+        color: #1C4F95;
+      }
+    }
+    
     @include breakpoint(lg) {
-      padding-left: 40px;
-      font-size: 12px;
-      line-height: 14px;      
+      padding-right: 10px;
+      padding-left: 45px;
+      &--small {
+        padding-left: 40px;
+        font-size: 12px;
+        line-height: 14px; 
+      }
     }
     @include breakpoint(md) {
       padding-left: 50px;
-      font-size: 18px;
-      line-height: 22px;
+      &--small {        
+        font-size: 18px;
+        line-height: 22px;
+      }
     }
   }
 }

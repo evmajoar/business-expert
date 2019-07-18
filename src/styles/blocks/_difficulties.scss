@@ -80,7 +80,7 @@
     &--narrow {
       max-width: 305px;
       @include breakpoint(md) {
-        max-width: 100%;;
+        max-width: 100%;
       }
     }
     @include breakpoint(lg) {

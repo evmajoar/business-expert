@@ -33,6 +33,12 @@
   }  
 }
 
+.brief {
+  max-width: 600px;
+  margin: 20px auto 0;
+  text-align: center;
+}
+
 .button {
   min-width: 187px;
   min-height: 40px;
@@ -46,6 +52,10 @@
   &--round {
     min-height: 50px;
     border-radius: 50px;
+  }
+  &--gradient {
+    color: $white;
+    background: $mainGradient;
   }
 }
 
