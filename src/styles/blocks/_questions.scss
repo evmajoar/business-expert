@@ -4,6 +4,7 @@
 
 .questions {
   padding: 42px 0 88px;
+  background-color: $white;
   @include breakpoint(lg) {
     padding: 37px 0 70px;
   }
@@ -21,7 +22,7 @@
 
   &__form {
     max-width: 860px;
-    margin: 58px auto;
+    margin: 58px auto 0;
     @include breakpoint(lg) {
       max-width: 700px;
       margin-top: 33px;
