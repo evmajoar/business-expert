@@ -1,0 +1,152 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+.estimate {
+  padding: 277px 0 93px;
+  color: $white;
+  background: $grape url($imageDir + "estimate-bg.jpg") center no-repeat;
+  background-size: cover;
+
+  &__container {
+    flex-direction: column;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__brief {
+    max-width: 480px;
+  }
+
+  &__wrapper {
+    margin-top: 20px;
+    margin-left: 50px;
+  }
+
+  &__subtitle {
+    font-weight: 700;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;    
+  }
+
+  &__item {
+    width: calc((100% - 120px)/4);
+    max-width: 240px;
+  }
+
+  &__sublist {
+    &--checkboxes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between
+    }
+  }
+
+  &__subitem {
+    &--checkbox {
+      width: calc((100% - 10px)/2);
+      margin-top: 10px;
+    }
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 18px;
+    line-height: 22px;
+    color: $white;
+    &--lower {
+      margin-top: 10px;
+    }
+    &--checkbox,
+    &--confirm {
+      flex-direction: row;
+    }
+  }
+
+  &__input {
+    min-height: 28px;
+    padding: 5px 10px 5px 0;
+    font-size: 18px;
+    line-height: 22px;
+    color: $white;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid $white;
+    &--project-point {
+      margin-top: 22px;
+    }
+    &--lower {
+      margin-top: 12px;
+    }
+  }
+
+  &__ordered-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__main-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 45px;
+  }
+
+  &__column {
+    width: calc((100% - 40px)/2);
+  }
+
+  &__main-item {
+    display: flex;
+    align-items: flex-start;
+    &:not(:first-of-type) {
+      margin-top: 40px;
+    }
+    &-number {
+      margin-top: -5px;
+      margin-right: 20px;
+      font-size: 42px;
+      line-height: 46px;
+    }
+    &-content {
+      flex-grow: 1;
+    }
+  }
+
+  &__confirm-wrapper {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 40px;
+    margin-left: 50px;    
+  }
+
+  &__button {
+    font-weight: 700;
+    min-height: 54px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  &__link {
+    font-weight: 700;
+    color: inherit;
+  }
+
+  &__checkbox-indicator {
+    flex-shrink: 0;
+    width: 21px;
+    height: 21px;
+    margin-right: 10px;
+    border: 1px solid $white;
+  }
+
+
+}
