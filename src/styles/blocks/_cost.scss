@@ -3,8 +3,18 @@
 
 
 .cost {
-  padding: 60px 0 72px;
+  padding: 60px 0 70px;
   background: $darkRed url($imageDir + "cost-bg.jpg") no-repeat;
+  background-size: cover;
+  @include breakpoint(lg) {
+    padding: 55px 0 65px;
+    background-image: url($imageDir + "cost-bg-992.jpg");
+  }
+  @include breakpoint(md) {
+    padding: 60px 0 85px;
+    background-image: url($imageDir + "cost-bg-768.jpg");
+  }
+
 
   &__title {
     margin: 0 auto;
@@ -18,7 +28,14 @@
     width: 100%;
     max-width: 1030px;
     min-height: 335px;
-    margin: 70px auto 0;    
+    margin: 70px auto 0;
+    @include breakpoint(lg) {
+      flex-direction: column;
+      margin: 65px auto 0;
+    }
+    @include breakpoint(md) {
+      margin: 30px auto 0;
+    }      
   }
 
   &__item {
@@ -29,6 +46,18 @@
     padding: 40px 37px 51px;
     background-color: $white;
     box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.25);
+    @include breakpoint(lg) {
+      width: 100%;
+      max-width: 335px;
+      margin-left: auto;
+      margin-right: auto;
+      &:not(:first-of-type) {
+        margin-top: 33px;
+      }
+    }
+    @media (max-width: 374px) {
+      padding: 30px 15px 30px;
+    }
   }
 
   &__icon {
