@@ -24,7 +24,6 @@
       padding: 42px 42px;
     }
     @include breakpoint(lg) {
-      max-width: 690px;
       padding: 20px 0;
       background: none;
     }

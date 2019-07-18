@@ -15,6 +15,9 @@
     align-items: center;
     @media (min-width: 1201px) {
       max-width: 1030px;
+    }
+    @media (min-width: 993px) and (max-width: 1200px) {
+      justify-content: center;      
     }   
   }
 
@@ -27,6 +30,10 @@
       max-width: 100%;
       margin-right: 0;
     }
+    @media (min-width: 993px) and (max-width: 1200px) {
+      justify-content: center;      
+    }  
+
     @include breakpoint(md) {
       flex-direction: column;
     }

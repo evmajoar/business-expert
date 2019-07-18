@@ -5,19 +5,62 @@
 .output {
   padding: 56px 0;
   background-color: $white;
+  @include breakpoint(el) {
+    padding: 50px 0;
+  }
+  @include breakpoint(md) {
+    padding: 50px 0 30px;
+  }
 
   &__container {
     padding-left: 85px;
+    @include breakpoint(el) {
+      padding-left: $gutter;
+      justify-content: center;
+    }
+    @include breakpoint(md) {
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    &--mobile {
+      display: none;
+    }
+    @include breakpoint(md) {
+      display: none;
+      &--mobile {
+        display: block;
+        text-align: center;
+      }
+    }
   }
 
   &__image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-right: 65px;
+    @include breakpoint(el) {
+      margin-right: 15px;
+    }
+    @include breakpoint(md) {
+      margin-top: 35px;
+      margin-right: 0;
+    }
+    @media (max-width: 393px) {
+      width: 100%;
+    }
   }
+
 
   &__list {
     max-width: 360px;
     margin-top: 25px;
     counter-reset: number;
+    @include breakpoint(md) {
+      margin: 15px auto 0;
+    }
   }
 
   &__item {
