@@ -4,4 +4,71 @@
 .main-footer {
   // Прижимаем футер к низу экрана
   margin-top: auto;
+  padding: 40px 0;
+  color: $white;
+  background-color: $darkGrey;
+  @include breakpoint(lg) {
+    padding: 15px 0;
+  }
+  @include breakpoint(md) {
+    padding: 20px 0 50px;
+  }
+
+  &__container {
+    @include breakpoint(md) {
+      flex-direction: column;
+    }
+  }
+
+  &__logo-wrapper {
+    margin-right: 190px;
+    @include breakpoint(el) {
+      margin-right: 90px;
+    }
+    @include breakpoint(md) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 0;
+    } 
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 184px - 190px);
+    @include breakpoint(el) {
+      width: calc(100% - 184px - 90px);
+    } 
+    @include breakpoint(md) {
+      flex-direction: column;
+      width: 100%;
+      margin-top: 20px;
+    }
+  }
+
+  &__item {
+    &--rights {
+      @include breakpoint(lg) {
+        display: none;
+      } 
+    }
+    @include breakpoint(md) {
+      &:not(:first-of-type) {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    color: inherit;
+  }
+
+  &__icon {
+    margin-right: 30px;
+    fill: $white;
+  }
 }
