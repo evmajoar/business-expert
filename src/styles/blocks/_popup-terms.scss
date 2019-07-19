@@ -1,0 +1,44 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+
+.popup-terms { 
+  display: none;
+  &--opened {
+    display: block;    
+  }
+
+  &__paragraph {
+    &--first {
+    margin-top: 50px;
+    @include breakpoint(lg) {
+      margin-top: 55px;
+    }
+    @include breakpoint(md) {
+      margin-top: 20px;
+    }
+    }
+  }
+  
+  &__subtitle {
+    margin-top: 20px;
+  }
+
+  &__list {
+    margin-top: 20px;
+    counter-reset: num;
+  }
+
+  &__item {
+    position: relative;
+    text-indent: 20px;
+    &::before {
+      content: counter(num) '. ';
+      counter-increment: num;
+      position: absolute;
+      top: 0;
+      left: -20px;
+    } 
+  }
+
+}

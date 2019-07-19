@@ -30,7 +30,35 @@
     background: $mainGradient;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+  &--popup {
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 60px;
+    @include breakpoint(lg) {
+      font-weight: 600;
+      font-size: 42px;
+      line-height: 46px;
+    }
+    @include breakpoint(md) {
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 30px;
+    }
   }  
+}
+
+.subtitle {
+  &--popup {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    @include breakpoint(md) {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
 }
 
 .brief {
@@ -147,8 +175,75 @@
       }
     }
   }
+}
 
+.logo-image--popup {
+  display: block;
+  width: 280px;
+  height: 106px;
+  margin: 0 auto;
+  @include breakpoint(lg) {
+    width: 182px;
+    height: 70px;
+  }
+}
 
+.close-button {
+  position: absolute;
+  top: 53px;
+  right: 48px;
+  width: 37px;
+  height: 37px;
+  &::before,
+  &::after {
+    @include pseudo;
+    top: 18px;
+    right: -8px;
+    width: 51px;
+    height: 2px;
+    background-color: #888888;
+  } 
+  &::before {
+    transform: rotate(45deg);
+  } 
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  @include breakpoint(lg) {
+    top: 35px;
+    right: 31px;
+    width: 25px;
+    height: 25px;
+    &::before,
+    &::after {
+      top: 12px;
+      right: -5px;
+      width: 35px;
+      height: 1px;
+    }
+  }
+
+  @media (min-width: 769px) {
+    &:hover,
+    &:focus {
+      &::before,
+      &::after {
+        background-color: $darkRed;
+        background: $mainGradient;
+      }
+    }
+  }
+
+  @include breakpoint(md) {
+    &:active {
+      &::before,
+      &::after {
+        background-color: $darkRed;
+        background: $mainGradient;
+      }
+    }
+  }
 }
 
 .visually-hidden {

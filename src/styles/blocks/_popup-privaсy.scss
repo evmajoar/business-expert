@@ -1,0 +1,39 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+
+.popup-privaсy { 
+  display: none;
+  &--opened {
+    display: block;    
+  }
+  
+  &__list {
+    margin-top: 50px;
+    counter-reset: num;
+    @include breakpoint(lg) {
+      margin-top: 55px;
+    }
+    @include breakpoint(md) {
+      margin-top: 20px;
+    }
+  }
+  
+  &__item {
+    &:not(:first-of-type) {
+      margin-top: 22px;
+    }
+  }
+
+  &__subtitle {
+    position: relative;
+    &::before {
+      content: counter(num) '. ';
+      counter-increment: num;
+    }    
+  }
+
+  &__paragraph {
+    margin-top: 10px;
+  }
+}

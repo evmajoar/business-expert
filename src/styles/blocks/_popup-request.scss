@@ -1,0 +1,29 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+
+.popup-request { 
+  display: none;
+  &--opened {
+    display: block;    
+  } 
+  
+  max-width: 700px;
+  padding: 150px 120px 95px;
+  @include breakpoint (lg) {
+    max-width: 460px;
+    padding: 67px 80px 43px;    
+  }
+  @include breakpoint(md) {
+    max-width: 300px;
+    padding: 69px 40px 56px;
+  }
+  
+  &__form {
+    flex-direction: column;
+    margin-top: 59px;
+    @include breakpoint(lg) {
+      margin-top: 42px;
+    }
+  }  
+}
