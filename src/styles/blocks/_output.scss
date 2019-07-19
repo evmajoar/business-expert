@@ -67,7 +67,6 @@
     position: relative;
     display: flex;
     align-items: center;
-    cursor: pointer;
     &:not(:first-of-type) {
       margin-top: 15px;
     }
@@ -79,14 +78,7 @@
       font-size: 42px;
       line-height: 46px;
       color: #cccccc;
-    }
-
-    &--active {
-      &::before {
-        background: $mainGradient;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
+      transition: all .3s ease-out;
     }
 
     &:hover {
