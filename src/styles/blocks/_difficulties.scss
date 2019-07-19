@@ -79,12 +79,14 @@
     margin-top: 20px;
     &--narrow {
       max-width: 305px;
-      @include breakpoint(md) {
-        max-width: 100%;
-      }
     }
     @include breakpoint(lg) {
       margin-top: 15px;
+    }
+    @include breakpoint(md) {
+      &--narrow {
+        max-width: 100%;
+      }
     }
   }
 }
