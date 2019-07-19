@@ -89,12 +89,27 @@
     color: inherit;
     &--phone {
       margin-right: 45px;
-      @include breakpoint(el) {
+    }
+    @include breakpoint(el) {
+      &--phone {
         margin-right: 20px;
       }
-      @include breakpoint(lg) {
+    }
+    @include breakpoint(lg) {
+      &--phone {
         margin-right: 0;
         margin-left: auto;
+      }
+    }
+    @media (min-width: 769px) {
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+    @include breakpoint(md) {
+      &:active {
+        text-decoration: underline;
       }
     }
   }
@@ -131,6 +146,7 @@
     align-items: center;
     justify-content: space-between;
     color: $darkGrey;
+    background-color: $white;
     @include breakpoint(lg) {
       justify-content: center;
       min-width: 170px;

@@ -130,11 +130,5 @@
     color: $darkRed;
     border: 1px solid $darkRed;
     border-radius: 50px;
-
-    &-gradient {
-      background: $mainGradient;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
   }
 }

@@ -65,6 +65,19 @@
     display: flex;
     align-items: center;
     color: inherit;
+
+    @media (min-width: 769px) {
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+
+    @include breakpoint(md) {
+      &:active {
+        text-decoration: underline;
+      }
+    }
   }
 
   &__icon {
