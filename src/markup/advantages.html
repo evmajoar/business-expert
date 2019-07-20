@@ -1,65 +1,90 @@
 <section class="advantages">
-  <div class="advantages__container">
+  <div class="advantages__container container">
     <div class="advantages__top-bar">
       <h2 class="advantages__title title">Чем мы лучше</h2>
-      <p class="advantages__quote">Наши клиенты - главная ценность</p>
+      <p class="advantages__quote">
+        <svg class="advantages__icon" width="30" height="28" viewBox="0 0 30 28">
+          <use xlink:href="icons/sprite.svg#icon-quotes"></use>
+        </svg>
+        Наши клиенты - главная ценность
+      </p>
     </div>
     <div class="advantages__content">
       <ul class="advantages__list">
-        <li class="advantages__item">
+        <li class="advantages__item advantages__item--active">
           <picture class="advantages__image-wrapper">
-            <source type="image/webp" srset="images/advantages-slide-first.webp">
-            <img src="images/advantages-slide-first.jpg" alt="Индивидуальный подход">
+            <source type="image/webp" srcset="images/advantages-slide-first.webp">
+            <img class="advantages__image" src="images/advantages-slide-first.jpg" alt="Индивидуальный подход">
           </picture>
           <div class="advantages__wrapper">
-            <h3 class="advantages__subtitle">
-              <span class="advantages__number">01</span>
-              Индивидуальный подход
-            </h3>
+            <span class="advantages__number">01</span>
+            <h3 class="advantages__subtitle title">Индивидуальный подход</h3>
             <p class="advantages__paragraph">Мы не используем шаблоны, так как каждый проект уникален. К каждому заказу разрабатывается своя финансовая модель, учитывающая особенности проекта.</p>
           </div>
         </li>
         <li class="advantages__item">
           <picture class="advantages__image-wrapper">
-            <source type="image/webp" srset="images/advantages-slide-second.webp">
-            <img src="images/advantages-slide-second.jpg" alt="Опыт">
+            <source type="image/webp" srcset="images/advantages-slide-first.webp">
+            <img class="advantages__image" src="images/advantages-slide-first.jpg" alt="Опыт">
           </picture>
           <div class="advantages__wrapper">
-            <h3 class="advantages__subtitle">
-              <span class="advantages__number">02</span>
-              Опыт
-            </h3>
+            <span class="advantages__number">02</span>
+            <h3 class="advantages__subtitle title">Опыт</h3>
             <p class="advantages__paragraph">Мы не используем шаблоны, так как каждый проект уникален. К каждому заказу разрабатывается своя финансовая модель, учитывающая особенности проекта.</p>
           </div>
         </li>
         <li class="advantages__item">
           <picture class="advantages__image-wrapper">
-            <source type="image/webp" srset="images/advantages-slide-third.webp">
-            <img src="images/advantages-slide-third.jpg" alt="Индивидуальный подход">
+            <source type="image/webp" srcset="images/advantages-slide-first.webp">
+            <img class="advantages__image" src="images/advantages-slide-first.jpg" alt="Индивидуальный подход">
           </picture>
           <div class="advantages__wrapper">
-            <h3 class="advantages__subtitle">
-              <span class="advantages__number">03</span>
-              Результаты работы
-            </h3>
+            <span class="advantages__number">03</span>
+            <h3 class="advantages__subtitle title">Результаты работы</h3>
             <p class="advantages__paragraph">Мы не используем шаблоны, так как каждый проект уникален. К каждому заказу разрабатывается своя финансовая модель, учитывающая особенности проекта.</p>
           </div>
         </li>
         <li class="advantages__item">
           <picture class="advantages__image-wrapper">
-            <source type="image/webp" srset="images/advantages-slide-fourth.webp">
-            <img src="images/advantages-slide-fourth.jpg" alt="Индивидуальный подход">
+            <source type="image/webp" srcset="images/advantages-slide-first.webp">
+            <img class="advantages__image" src="images/advantages-slide-first.jpg" alt="Индивидуальный подход">
           </picture>
           <div class="advantages__wrapper">
-            <h3 class="advantages__subtitle">
-              <span class="advantages__number">04</span>
-              Конфиденциальность
-            </h3>
+            <span class="advantages__number">04</span>
+            <h3 class="advantages__subtitle title">Конфиденциальность</h3>
             <p class="advantages__paragraph">Мы не используем шаблоны, так как каждый проект уникален. К каждому заказу разрабатывается своя финансовая модель, учитывающая особенности проекта.</p>
           </div>
         </li>
       </ul>
       <div class="advantages__buttons-wrapper">
+        <button class="advantages__button" type="button">
+          <picture class="advantages__button-image-wrapper">
+            <source type="image/webp" srcset="images/advantages-button-image-2.webp">
+            <img class="advantages__button-image" src="images/advantages-button-image-2.jpg" alt="Индивидуальный подход">
+          </picture>
+          <span class="advantages__button-text">Индивидуальный подход</span>
+        </button>
+        <button class="advantages__button" type="button">
+          <picture class="advantages__button-image-wrapper">
+            <source type="image/webp" srcset="images/advantages-button-image-2.webp">
+            <img class="advantages__button-image" src="images/advantages-button-image-2.jpg" alt="Опыт">
+          </picture>
+          <span class="advantages__button-text">Опыт</span>
+        </button>
+        <button class="advantages__button" type="button">
+          <picture class="advantages__button-image-wrapper">
+            <source type="image/webp" srcset="images/advantages-button-image-3.webp">
+            <img class="advantages__button-image" src="images/advantages-button-image-3.jpg" alt="Результаты работы">
+          </picture>
+          <span class="advantages__button-text">Результаты работы</span>
+        </button>
+        <button class="advantages__button" type="button">
+          <picture class="advantages__button-image-wrapper">
+            <source type="image/webp" srcset="images/advantages-button-image-4.webp">
+            <img class="advantages__button-image" src="images/advantages-button-image-4.jpg" alt="Конфиденциальность">
+          </picture>
+          <span class="advantages__button-text">Конфиденциальность</span>
+        </button>
       </div>
     </div>
   </div>
