@@ -215,7 +215,21 @@
     &--popup {
       min-height: 70px
     }
-  
+
+    &--gradient-border {
+      border: none;
+      background: $mainGradient;
+      &::before {
+        @include pseudo;
+        top: 1px;
+        right: 1px;
+        bottom: 1px;
+        left: 1px;
+        background: $white;
+        border-radius: inherit;
+      }
+    }
+
     @include breakpoint(lg) {
       &--small {
         min-height: 32px;
@@ -228,6 +242,7 @@
   }
 
   &__icon {
+    position: relative;
     &--white {
       fill: $white;
     }
@@ -270,7 +285,8 @@
     line-height: 22px;    
     border: none;
     border-radius: 50px;
-    background: transparent;  
+    background: transparent; 
+    z-index: 1; 
     @include placeholder {
       font-size: 18px;
     //  line-height: 22px;
@@ -306,6 +322,7 @@
         opacity: 1;
       }    
     }
+
     
     @include breakpoint(lg) {
       padding-right: 10px;
