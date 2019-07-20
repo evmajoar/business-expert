@@ -273,7 +273,7 @@
     background: transparent;  
     @include placeholder {
       font-size: 18px;
-      line-height: 22px;
+    //  line-height: 22px;
       color: $darkGrey;      
     }
     @include placeholderHidden;
@@ -301,7 +301,7 @@
       @include placeholder {
         font-weight: 700;
         font-size: 27px;
-        line-height: 37px;
+      //  line-height: 37px;
         color: #bdbdbd;
         opacity: 1;
       }    
@@ -316,7 +316,7 @@
         line-height: 14px;
         @include placeholder {
           font-size: 12px;
-          line-height: 4px;
+      //    line-height: 4px;
         } 
       }
       &--popup {
@@ -325,7 +325,7 @@
         line-height: 22px;
         @include placeholder {
           font-size: 18px;
-          line-height: 22px;
+        //  line-height: 22px;
         }
       }
     }
@@ -337,7 +337,7 @@
         line-height: 22px;
         @include placeholder {
           font-size: 18px;
-          line-height: 12px;
+      //    line-height: 12px;
         } 
       }
     }
