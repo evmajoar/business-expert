@@ -1,0 +1,288 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+
+.reasons {
+  padding: 50px 0;
+  background: radial-gradient(#3EBFF7, #266DC8) no-repeat;
+  @include breakpoint(md) {
+    padding: 70px 0;
+  } 
+
+  &__video-wrapper {
+    position: relative;
+    cursor: pointer;
+    &:hover {
+      @include breakpoint(el) {
+        svg {
+          & circle {
+            stroke: $grape;
+          }
+          & path {
+            fill: $grape;
+          }
+        }
+      }
+    }
+  }
+
+  &__play-button {
+    position: absolute;
+    left: calc(50% - 41px);
+    top: calc(50% - 41px);
+    width: 83px;
+    height: 83px;
+    svg {
+      & circle {
+        stroke: $white;
+        transition: all .3s ease-out;
+      }
+      & path {
+        fill: $white;
+        transition: all .3s ease-out;
+      }
+    }
+    &:active {
+      svg {
+        & circle {
+          stroke: $grape;
+        }
+        & path {
+          fill: $grape;
+        }
+      }
+    }
+  }
+
+  &__text {
+    color: $white;
+    margin-top: 12px;
+
+    @include breakpoint(md) {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+
+  }
+
+  &__list {
+    margin-top: 35px;
+    counter-reset: item;
+    font-family: $Akrobat;
+
+    .slick-slide {
+      padding: 0 10px !important;
+      min-height: 145px;
+      overflow: hidden;
+
+      &:first-child,
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(5),
+      &:nth-child(6),
+      &:nth-child(7),
+      &:nth-child(8),
+      &:nth-child(9) {
+        .reasons__desc b {
+          &::before {
+            @include pseudo("0" counter(item));
+          }
+        }
+      }
+
+    }
+
+  }
+
+  &__item {
+    @include breakpoint(md) {
+      display: flex !important;
+    }
+    video {
+      width: 100%;
+      height: auto;
+      max-width: 570px;
+    }
+  }
+
+  &__desc {
+    margin-top: 15px;
+    color: $white;
+    font-size: 14px;
+    @include breakpoint(md) {
+      width: calc(100% - 240px);
+      margin-left: 20px;
+      margin-top: 0;
+      font-size: 16px;
+    }
+    @include breakpoint(el) {
+      width: calc(100% - 570px);
+    }
+    &-title {
+      display: block;
+      color: $white;
+      font-size: 18px;
+      margin-bottom: 12px;
+      padding-left: 55px;
+      padding-top: 8px;
+      position: relative;
+      @include breakpoint(el) {
+        font-size: 20px;
+        padding-top: 6px;
+        padding-left: 65px;
+        margin-bottom: 20px;
+      }
+      &::before {
+        @include pseudo(counter(item));
+        font-family: $Akrobat !important;
+        counter-increment: item;
+        top: 0;
+        left: 0;
+        color: $grape;
+        font-size: 36px;
+        font-weight: 700;
+        @include breakpoint(el) {
+          font-size: 48px;
+        }
+      }
+    }
+    &-text {
+      margin-top: 25px;
+      @include breakpoint(el) {
+        margin-top: 45px;
+      }
+    }
+  }
+
+  &__wrapper {
+    @include breakpoint(el) {
+      max-width: $commonWidth;
+      margin: -50px auto 0;
+    }
+  }
+
+  &__thumb {
+    &-list {
+      margin-top: 40px;
+      counter-reset: item;
+      @include breakpoint(el) {
+        margin-top: 0;
+        max-width: 700px;
+        margin-left: auto;
+      }
+
+      .slick-slide {
+        padding: 0 10px !important;
+        min-height: 145px;
+        overflow: hidden;
+        font-family: $Akrobat !important;
+
+        &:first-child,
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(4),
+        &:nth-child(5),
+        &:nth-child(6),
+        &:nth-child(7),
+        &:nth-child(8),
+        &:nth-child(9) {
+          .reasons__thumb-text {
+            &::before {
+              @include pseudo("0" counter(item));
+            }
+          }
+        }
+
+      }
+
+    }
+    &-item {
+      position: relative;
+      font-family: $Akrobat;
+      padding: 10px;
+      display: flex !important;
+      min-height: 145px;
+    }
+    &-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+    }
+    &-text {
+      font-weight: 500;
+      font-size: 14px;
+      color: $white;
+      position: relative;
+      z-index: 2;
+      margin-top: auto;
+      padding-top: 40px;
+      &::before {
+        @include pseudo(counter(item));
+        counter-increment: item;
+        top: 0;
+        left: 0;
+        font-size: 24px;
+        font-weight: 700;
+      }
+    }
+    &-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 159, 227, .15);
+    }
+  }
+
+  &__control {
+    max-width: 140px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 45px auto 0;
+    &-button {
+      font-size: 0;
+      width: 39px;
+      height: 39px;
+      border: 3px solid $darkGrey;
+      transition: all .25s ease-in-out;
+      svg {
+        transition: all .25s ease-in-out;
+      }
+      &:active {
+        border-color: $grape;
+        > svg {
+          fill: $grape;
+        }
+      }
+      &:hover {
+        @include breakpoint(el) {
+          border-color: $grape;
+          > svg {
+            fill: $grape;
+          }
+        }
+      }
+      &.slick-disabled {
+        border-color: #D3D3D3;
+        > svg {
+          fill: #D3D3D3;
+        }
+      }
+      &--prev {
+        order: -1;
+        svg {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+    &-icon {
+      fill: $darkGrey;
+    }
+  }
+
+}
