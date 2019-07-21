@@ -1,0 +1,125 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+
+.quality {
+  padding: 67px 0 30px;
+  color: $white;
+  background: $grape url($imageDir + "quality-bg.jpg") center no-repeat;
+  background-size: cover;
+
+  @include breakpoint(lg) {
+    padding: 43px 0;
+  }
+
+  &__container {
+    flex-direction: column;
+  }
+
+  &__title {
+    margin-left: auto;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 85px;
+    &--numbers {
+      margin-top: -150px;
+      margin-bottom: -60px
+    }
+    &--offer {
+      margin-top: 185px;
+    }
+  }
+
+  &__text-wrapper {
+    flex-grow: 1;
+    margin-right: 45px;
+  }
+
+  &__image-wrapper {    
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    &--right-shift {
+      margin-right: -50px;
+    }
+  }
+
+  &__paragraph {
+    max-width: 415px;
+    margin-top: 15px;
+    &--big {
+      max-width: 100%;
+    }
+    &--offer {
+      max-width: 380px;
+      margin-top: 0;
+      margin-right: 25px;
+    }
+  }
+
+  &__heading {
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  &__projects {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  &__link {
+    display: flex;    
+    font-weight: 700;         
+    font-size: 18px;
+    line-height: 22px;
+    color: $darkGrey;    
+    &--sample {
+      max-width: 226px;
+      min-height: 54px;
+      margin-top: 23px;      
+      box-shadow: 0px 2px 25px rgba(80, 75, 157, 0.88);      
+    }
+    &--offer {
+      max-width: 330px;
+      min-height: 54px;
+      box-shadow: 0px 2px 25px rgba(80, 75, 157, 0.88);
+    }
+    &--contract {
+      margin-top: 15px;
+      margin-right: 70px;
+      font-weight: 400;
+      color: inherit;
+      justify-content: right;
+    }
+  }
+
+  &__numbers-wrapper {
+    position: relative;
+    margin-left: -200px;
+    margin-right: 45px;
+  }
+
+  &__amount {
+    position: absolute;
+    top: 0;
+    right: -230px;
+    width: 230px;
+    height: 151px;
+    padding: 22px 43px;
+    text-transform: uppercase;
+    background-color: rgba(255,255,255,.2);
+  }
+
+  &__number {
+    font-weight: 900;
+    font-size: 60px;
+    line-height: 64px;
+  }
+  &__points {
+    font-size: 22px;
+    line-height: 24px;
+  }
+}

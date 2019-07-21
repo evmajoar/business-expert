@@ -6,7 +6,7 @@
   position: relative;
   padding: 139px 0 100px;
   color: $white;
-  overflow-x: hidden;
+  overflow: hidden;
   &::before {
     @include pseudo;
     top:0;
@@ -28,6 +28,13 @@
     &::before {
       background-image: url($imageDir + "advantages-bg-768.png");
     }    
+  }
+
+  &__container {
+    padding-left: 85px;
+    @include breakpoint(el) {
+      padding-left: $gutter;
+    }
   }
 
   &__top-bar {
@@ -166,7 +173,7 @@
     }
   }
 
-  &__container {
+  &__buttons-container {
     @include breakpoint(md) {
       max-width: 100%;
       margin-left: 25px;
