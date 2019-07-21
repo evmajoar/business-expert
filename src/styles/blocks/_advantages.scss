@@ -5,7 +5,8 @@
 .advantages {
   position: relative;
   padding: 139px 0 100px;
-  color: $white;  
+  color: $white;
+  overflow-x: hidden;
   &::before {
     @include pseudo;
     top:0;
@@ -16,7 +17,6 @@
     background-size: cover;
     z-index: -1;
   }
-
   @include breakpoint(lg) {
     padding: 44px 0;
     &::before {
@@ -35,6 +35,13 @@
     align-items: flex-start; 
     justify-content: space-between;
     width: 100%;
+    @include breakpoint(lg) {
+      align-items: center; 
+    }
+    @include breakpoint(md) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
   &__quote {
@@ -51,6 +58,13 @@
       margin-top: -14px;
       background-color: $white;
     }
+    @include breakpoint(lg) {
+      margin-right: 0;
+    }
+    @include breakpoint(md) {
+      margin-left: 0;
+      margin-top: 35px;
+    }
   }
 
   &__icon {
@@ -64,17 +78,37 @@
   &__content {
     width: 100%;
     margin-top: 84px;
+    @include breakpoint(lg) {
+      margin-top: 36px;
+    }
   }
 
   &__item {
     display: none;
     &--active {
       display: flex;
+    }
+    @include breakpoint(md) {
+      flex-direction: column;
     }    
   }
 
   &__image-wrapper {
     margin-right: 30px;
+    @include breakpoint(md) {
+      margin-right: 0;
+    }
+  }
+
+  &__image {
+    @include breakpoint(lg) {
+      max-width: 331px;
+    }
+    @include breakpoint(md) {
+      display: block;
+      max-width: 100%;
+    //  margin: 0 auto;
+    }
   }
 
   &__wrapper {
@@ -82,6 +116,16 @@
     max-width: 500px;
     margin-top: 30px;
     padding-left: 58px;
+    @include breakpoint(lg) {
+      max-width: 315px;
+      margin-top: 10px;
+    }
+    @include breakpoint(md) {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 100%;
+      padding-left: 0;
+    }
   }
 
   &__number {
@@ -92,10 +136,46 @@
     font-size: 48px;
     line-height: 48px;
     color: inherit;
+    @include breakpoint(lg) {
+      font-size: 36px;
+      line-height: 36px;
+    }
+    @include breakpoint(md) {
+      position: static;
+      margin-right: 15px;
+    }
+  }
+
+  &__subtitle {
+    @include breakpoint(lg) {
+      margin-top: 10px;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 24px;
+    }
   }
 
   &__paragraph {
     margin-top: 20px;
+    @include breakpoint(lg) {
+      margin-top: 15px;
+    }
+    @include breakpoint(md) {
+      width: 100%;
+      margin-top: 20px;
+    }
+  }
+
+  &__container {
+    @include breakpoint(md) {
+      max-width: 100%;
+      margin-left: 25px;
+      margin-right: 0;
+      padding: 0;
+    }
+    @media(max-width: 480px) {
+      margin-left: 15px;
+    }
   }
 
   &__buttons-wrapper {
@@ -106,16 +186,43 @@
     margin-top: -120px;
     margin-left: auto;
     margin-right: 0;
-    counter-reset: button;
+    @include breakpoint(lg) {
+      justify-content: space-between;
+      max-width: 100%;
+      margin-top: 30px;
+      margin-right: auto;
+    }
+    @include breakpoint(md) {
+      justify-content: flex-start;
+      width: 100%;
+      max-width: 100%;
+      margin-top: 20px;
+      padding: 15px 0;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      &::-webkit-scrollbar { /* chrome based */
+        width: 0px;  /* ширина scrollbar'a */
+        background: transparent;  /* опционально */
+      }
+      -ms-overflow-style: none;  /* IE 10+ */
+      scrollbar-width: none; /* Firefox */
+    }
   }
 
   &__button {
     position: relative;
-    display: flex; 
+    display: flex;
+    flex-direction: column;
     width: 224px;
     height: 145px;
     padding: 40px 17px;
-    box-shadow: 0px 2px 35px rgba(0, 0, 0, 0.7);
+    font-size: 24px;
+    line-height: 24px;
+    color: $white;
+    text-align: left;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    transition: all .3s ease-out;
     &:not(:last-of-type) {
       margin-right: 10px;
     }
@@ -125,32 +232,42 @@
       left: 0;
       width: 100%;
       height: 100%;
+      z-index: -1;
     }
     &--hidden {
       display: none;
     }
+    @include breakpoint(lg) {
+      padding: 22px 26px;
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    @media (min-width: 769px) {
+      &:hover,
+      &:focus {
+        transform: scale(1.05);
+      }
+    }
+
+    @include breakpoint(md) {
+      flex-shrink: 0;
+      &:not(:last-of-type) {
+        margin-right: 25px;
+      }
+      &:active {
+        transform: scale(1.05);
+      }
+    }
   }
 
-  &__button-text {
-    position: relative;
-    padding-top: 37px;
-    font-size: 24px;
-    line-height: 24px;
-    color: $white;
-    text-align: left;
-    &::before {
-      @include pseudo;
-      content: "0" counter(button);
-      counter-increment: button;
-      top: 0;
-      left: 0;
+  &__button-number {
+      display: block;
+      margin-bottom: 15px;
       font-weight: 700;
       font-size: 24px;
       line-height: 28px;
       color: $white;
     }
-  }
-
-
 
 }
