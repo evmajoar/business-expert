@@ -2,59 +2,62 @@
 @import '../helpers/mixins';
 
 
+
 .examples {
   background: $white;
-  padding: 88px 0 79px;
-  @include breakpoint(md) {
-    padding: 100px 0 60px;
-  }
+  padding: 60px 0;
   @include breakpoint(el) {
-    padding: 125px 0;
+    padding: 32px 0;
+  }
+  @include breakpoint(md) {
+    padding: 70px 0;
   }
 
-  .container {
-    @include breakpoint(el) {
-      max-width: 1030px;
-    }
+  &__container {
+    max-width: 1030px;
+  }
+
+  &__top-wrapper {
+    width: 100%;
   }
 
   &__title {
-    @include breakpoint(md) {
-      text-align: center;
-    }
-  }
-
-  &__text {
-    margin-top: 12px;
-    @include breakpoint(md) {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 24px;
-    }
+    width: 100%;
+    text-align: center;
   }
 
   &__carousel {
-    margin-top: 40px;
+    margin-top: -40px;
+    order: 3;
     @include breakpoint(md) {
-      margin-top: -40px;
-      order: 3;
+      margin-top: 40px;
     }
   }
 
   &__item {
     width: 100%;
+    @include breakpoint(el) {
+      max-width: 992px !important;
+    }
+    @include breakpoint(md) {
+      max-width: 768px !important;
+    }
+    
   }
 
   &__controls {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin: 36px auto 0;
+    justify-content: space-between;    
     max-width: 250px;
     width: 100%;
+    margin: 50px -20px -30px auto;
+    z-index: 2;
+    @include breakpoint(el) {
+      margin-right: 0;
+    }
     @include breakpoint(md) {
-      margin: 50px 0 0 auto;
-      z-index: 2;
+      margin: 36px auto 0;
     }
 
     &-counter {
@@ -73,27 +76,32 @@
       font-size: 0;
       width: 39px;
       height: 39px;
-      border: 3px solid $darkGrey;
+      border: 3px solid $grape;
       background: $white;
       transition: all .25s ease-in-out;
 
       svg {
+        fill: $grape;
         transition: all .25s ease-in-out;
       }
 
-      &:active {
-        border-color: $grape;
-
-        > svg {
-          fill: $grape;
+      @media (min-width: 769px) {
+        &:hover,
+        &:focus {
+          border-color: $darkRed;
+  
+          > svg {
+            fill: $darkRed;
+          }
         }
       }
 
-      &:hover {
-        @include breakpoint(el) {
-          border-color: $grape;
+      @include breakpoint(md) {
+        &:active {
+          border-color: $darkRed;
+  
           > svg {
-            fill: $grape;
+            fill: $darkRed;
           }
         }
       }
@@ -121,8 +129,10 @@
   }
 
   .slick-slide {
+    padding-top: 120px;
+    
     @include breakpoint(md) {
-      padding-top: 90px;
+      padding-top: 0;
     }
     img {
       opacity: 0 !important;
@@ -138,62 +148,27 @@
 
   .example {
     position: relative;
-    text-align: center;
+    min-height: 400px;    
+    text-align: left;
+
     @include breakpoint(md) {
-      text-align: left;
-      &::before {
-        @include pseudo();
-        top: -35px;
-        right: 0;
-        width: calc(100% - 265px);
-        height: 5px;
-        background: #39AFED;
-      }
-    }
-    @include breakpoint(el) {
-      min-height: 320px;
-    }
-
-    &::before {
-      @include breakpoint(md) {
-        @include pseudo();
-        top: -35px;
-        right: 0;
-        width: calc(100% - 265px);
-        height: 5px;
-        background: #39AFED;
-      }
-      @include breakpoint(el) {
-        width: calc(100% - 330px);
-      }
-    }
-
-    &__title {
-      font-size: 18px;
-      @include breakpoint(md) {
-        margin-left: 300px;
-        padding-right: 30px;
-        font-size: 24px;
-      }
-      @include breakpoint(el) {
-        margin-left: 400px;
-        font-size: 30px;
-      }
+      position: relative;
     }
 
     &__image {
-      margin: 12px auto 0;
-      max-width: 168px;
-      height: auto;
-      @include breakpoint(md) {
-        margin-top: 0;
-        position: absolute;
-        max-width: 265px;
-        top: -91px;
-        left: 0;
+      position: absolute;
+      flex-shrink: 0;
+      max-width: 422px;
+      top: -120px;
+      left: 0;      
+      @include breakpoint(lg) {
+        max-width: 309px;
+        height: auto;
+        top: -50px;
       }
-      @include breakpoint(el) {
-        max-width: 330px;
+      @include breakpoint(md) {
+        position: static;
+        margin: 12px auto 0;
       }
 
       &.slide {
@@ -201,18 +176,72 @@
       }
     }
 
-    &__text {
-      margin-top: 23px;
-      font-size: 14px;
-      color: #737373;
-      @include breakpoint(md) {
-        margin-left: 300px;
-        padding-right: 30px;
-        font-size: 16px;
+    &__wrapper {
+      max-width: 590px;
+      margin-left: 502px;
+      &::before {      
+        @include pseudo();
+        top: -27px;
+        left: 422px;
+        width: 600px;      
+        height: 5px;
+        background: $darkRed;
+        @include breakpoint(el) {
+          width: calc(100% - 422px);
+        }
+        @include breakpoint(lg) {
+          width: calc(100% - 309px);
+          left: 330px;
+        }
+        @include breakpoint(md) {
+          display: none;
+        }
       }
       @include breakpoint(el) {
-        margin-left: 400px;
-        font-size: 18px;
+        max-width: 400px;
+        margin-left: 452px;
+      }
+      @include breakpoint(lg) {
+        margin-left: 330px;
+      }
+      @include breakpoint(md) {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    &__text {
+      position: relative;
+      margin-top: 10px;
+      color: #737373;
+      &:first-of-type {
+        margin-top: 50px;
+        margin-bottom: 20px;
+      }
+      &--result {
+        margin-top: 20px;
+      }
+      @include breakpoint(lg) {
+        &:first-of-type {
+          margin-top: 20px;
+          margin-bottom: 0;
+        }
+        &--result {
+          margin-top: 10px;
+        }
+      }
+      
+    }
+
+    &__subtilte {
+      margin-right: 70px;
+      color: $darkGrey;
+      &--result {
+        display: block;
+        margin-bottom: 10px;
+      }
+      @include breakpoint(lg) {
+        margin-right: 30px;
       }
     }
   }
