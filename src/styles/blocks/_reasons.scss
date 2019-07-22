@@ -3,72 +3,79 @@
 
 
 .reasons {
-  padding: 50px 0;
-  background: radial-gradient(#3EBFF7, #266DC8) no-repeat;
+  padding: 139px 0 100px;
+  color: $white;
+  background: $grape url($imageDir + "reasons-bg.jpg") top left no-repeat;
+  background-size: cover;
+  @include breakpoint(el) {
+    padding: 44px 0;  
+  }
+  @include breakpoint(lg) {
+    background-image: url($imageDir + "reasons-bg-992.jpg");
+    background-position: top center;
+  }
   @include breakpoint(md) {
-    padding: 70px 0;
-  } 
-
-  &__video-wrapper {
-    position: relative;
-    cursor: pointer;
-    &:hover {
-      @include breakpoint(el) {
-        svg {
-          & circle {
-            stroke: $grape;
-          }
-          & path {
-            fill: $grape;
-          }
-        }
-      }
-    }
+    padding: 25px 0;  
+    background-image: url($imageDir + "reasons-bg-768.jpg");
+    background-position: top left;
   }
 
-  &__play-button {
-    position: absolute;
-    left: calc(50% - 41px);
-    top: calc(50% - 41px);
-    width: 83px;
-    height: 83px;
-    svg {
-      & circle {
-        stroke: $white;
-        transition: all .3s ease-out;
-      }
-      & path {
-        fill: $white;
-        transition: all .3s ease-out;
-      }
-    }
-    &:active {
-      svg {
-        & circle {
-          stroke: $grape;
-        }
-        & path {
-          fill: $grape;
-        }
-      }
+  &__container {
+    padding-left: 85px;
+    @include breakpoint(el) {
+      padding-left: $gutter;
     }
   }
-
-  &__text {
-    color: $white;
-    margin-top: 12px;
-
+  
+  &__top-bar {
+    display: flex;
+    align-items: flex-start; 
+    justify-content: space-between;
+    width: 100%;
+    @include breakpoint(el) {
+      align-items: center; 
+    }
     @include breakpoint(md) {
-      font-size: 24px;
-      margin-top: 20px;
+      flex-direction: column;
+      align-items: flex-start;
     }
+  }
+  
+  &__quote {
+    position: relative;
+    padding-left: 73px;
+    margin-left: auto;
+    margin-right: 110px;
+    &::before {
+      @include pseudo;
+      top: 50%;
+      left: 49px;
+      height: 27px;
+      width: 3px;
+      margin-top: -14px;
+      background-color: $white;
+    }
+    @include breakpoint(el) {
+      margin-right: 0;
+    }
+    @include breakpoint(md) {
+      margin-left: 0;
+      margin-top: 35px;
+    }
+  }
 
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    fill: $white;
   }
 
   &__list {
+    width: 100%;
     margin-top: 35px;
     counter-reset: item;
-    font-family: $Akrobat;
 
     .slick-slide {
       padding: 0 10px !important;
@@ -84,7 +91,7 @@
       &:nth-child(7),
       &:nth-child(8),
       &:nth-child(9) {
-        .reasons__desc b {
+        .reasons__desc  {
           &::before {
             @include pseudo("0" counter(item));
           }
@@ -95,88 +102,128 @@
 
   }
 
+  
   &__item {
+    display: flex !important;
     @include breakpoint(md) {
-      display: flex !important;
+      flex-direction: column;
+    }    
+  }
+
+  &__image-wrapper {
+    margin-right: 30px;
+    @include breakpoint(md) {
+      margin-right: 0;
     }
-    video {
-      width: 100%;
-      height: auto;
-      max-width: 570px;
+  }
+
+  &__image {
+    @include breakpoint(el) {
+      max-width: 331px;
+    }
+    @include breakpoint(md) {
+      display: block;
+      max-width: 100%;
     }
   }
 
   &__desc {
-    margin-top: 15px;
-    color: $white;
-    font-size: 14px;
-    @include breakpoint(md) {
-      width: calc(100% - 240px);
-      margin-left: 20px;
-      margin-top: 0;
-      font-size: 16px;
+    position: relative;
+    max-width: 500px;
+  //  margin-top: 30px;
+    padding-top: 5px;
+    padding-left: 58px;
+    &::before {
+      @include pseudo(counter(item));
+      counter-increment: item;
+      top: 0;
+      left: 0;        
+      font-weight: 700;
+      font-size: 48px;
+      color: $white;        
+      @include breakpoint(el) {
+        font-size: 36px;
+      }
+      @include breakpoint(md) {
+        position: static !important;
+        margin-right: 15px;
+      }
     }
     @include breakpoint(el) {
-      width: calc(100% - 570px);
+      padding-top: 15px;
     }
+    @include breakpoint(lg) {
+      max-width: 315px;
+    }
+    @include breakpoint(md) {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 100%;
+      padding-left: 0;
+    }
+
     &-title {
       display: block;
       color: $white;
-      font-size: 18px;
-      margin-bottom: 12px;
-      padding-left: 55px;
-      padding-top: 8px;
+      font-weight: 600;
+      font-size: 42px; 
       position: relative;
       @include breakpoint(el) {
-        font-size: 20px;
-        padding-top: 6px;
-        padding-left: 65px;
-        margin-bottom: 20px;
-      }
-      &::before {
-        @include pseudo(counter(item));
-        font-family: $Akrobat !important;
-        counter-increment: item;
-        top: 0;
-        left: 0;
-        color: $grape;
-        font-size: 36px;
         font-weight: 700;
-        @include breakpoint(el) {
-          font-size: 48px;
-        }
+        font-size: 18px;
+        line-height: 24px;
       }
+      @include breakpoint(md) {
+        padding-top: 10px;
+      }      
     }
+
     &-text {
       margin-top: 25px;
       @include breakpoint(el) {
-        margin-top: 45px;
+        margin-top: 15px;
       }
     }
   }
 
   &__wrapper {
+    max-width: $commonWidth;
+    margin: -120px auto 0;
     @include breakpoint(el) {
-      max-width: $commonWidth;
-      margin: -50px auto 0;
+      margin-top: 30px;
+      padding: 0 $gutter;
+      max-width: 992px;
+    }
+    @include breakpoint(lg) {
+      max-width: 768px;
+    }
+    @include breakpoint(md) {
+      max-width: 100%;
+      padding-right: 0;
     }
   }
 
   &__thumb {
     &-list {
-      margin-top: 40px;
+      margin-left: auto;
+      max-width: 672px;
       counter-reset: item;
       @include breakpoint(el) {
-        margin-top: 0;
-        max-width: 700px;
-        margin-left: auto;
+        margin-right: auto;
+        max-width: 992px;
+      }
+      
+      .slick-list {
+        @include breakpoint(md) {
+          padding: 0 !important;
+        }
       }
 
       .slick-slide {
         padding: 0 10px !important;
+        max-width: 240px;
         min-height: 145px;
         overflow: hidden;
-        font-family: $Akrobat !important;
 
         &:first-child,
         &:nth-child(2),
@@ -193,39 +240,44 @@
             }
           }
         }
-
       }
-
     }
     &-item {
       position: relative;
-      font-family: $Akrobat;
-      padding: 10px;
+      padding: 35px 17px 20px;
       display: flex !important;
+      min-width: 224px;
       min-height: 145px;
+      @include breakpoint(lg) {
+        padding: 22px 26px;
+      }      
     }
     &-image {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: auto;
+      height: 100%;
     }
     &-text {
-      font-weight: 500;
-      font-size: 14px;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 24px;
       color: $white;
       position: relative;
       z-index: 2;
-      margin-top: auto;
       padding-top: 40px;
       &::before {
         @include pseudo(counter(item));
         counter-increment: item;
         top: 0;
         left: 0;
-        font-size: 24px;
         font-weight: 700;
+        font-size: 24px;        
+      }
+      @include breakpoint(el) {
+        font-size: 18px;
+        line-height: 22px;
       }
     }
     &-overlay {
@@ -248,22 +300,22 @@
       font-size: 0;
       width: 39px;
       height: 39px;
-      border: 3px solid $darkGrey;
+      border: 3px solid $grape;
       transition: all .25s ease-in-out;
       svg {
         transition: all .25s ease-in-out;
       }
       &:active {
-        border-color: $grape;
+        border-color: $darkRed;
         > svg {
-          fill: $grape;
+          fill: $darkRed;
         }
       }
       &:hover {
         @include breakpoint(el) {
-          border-color: $grape;
+          border-color: $darkRed;
           > svg {
-            fill: $grape;
+            fill: $darkRed;
           }
         }
       }
@@ -281,8 +333,12 @@
       }
     }
     &-icon {
-      fill: $darkGrey;
+      fill: $grape;
+    }
+    @include breakpoint(md) {
+      margin-top: 30px;
     }
   }
+
 
 }
