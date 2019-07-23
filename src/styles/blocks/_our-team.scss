@@ -48,6 +48,7 @@
         padding: 15px !important ;
         @include breakpoint(md) {
           min-height: 100px;
+          
         }
       }
 
@@ -75,6 +76,7 @@
     }
 
     &-image-wrapper {
+      flex-shrink: 0;
       width: 56px;
       height: 56px;
       margin-right: 20px;
@@ -228,6 +230,7 @@
       padding: 0;
       max-width: 100%;
       box-shadow: none;
+      overflow: hidden;
     }
   }
 

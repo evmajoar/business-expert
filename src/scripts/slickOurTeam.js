@@ -38,17 +38,19 @@ responsive: [
     settings: {
       vertical: false,
       verticalSwiping: false,
+      infinite: false,
       slidesToShow: 2,
       centerMode: false,
     }
   },
   {
-    breakpoint: 577,
+    breakpoint: 481,
     settings: {
       vertical: false,
       verticalSwiping: false,
+      infinite: false,
       slidesToShow: 1,
-      centerMode: true,
+      centerMode: false,
     }
   }
 ]
