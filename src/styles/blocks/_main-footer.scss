@@ -7,7 +7,6 @@
   padding: 40px 0;
   color: $white;
   background-color: $darkGrey;
-  overflow: hidden;
   @include breakpoint(lg) {
     padding: 15px 0;
   }
