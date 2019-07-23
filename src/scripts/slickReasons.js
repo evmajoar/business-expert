@@ -14,22 +14,22 @@ $reasons.slick({
 });
 
 $reasonsThumb.slick({
-  slidesToShow: 1,
+  slidesToShow: 2,
   slidesToScroll: 1,
   asNavFor: $reasons,
   infinite: false,
   dots: false,
-  centerMode: true,
+  centerMode: false,
   focusOnSelect: true,
   // draggable: false,
-  mobileFirst: true,
+  //mobileFirst: true,
   prevArrow: $reasonsPrevBtn,
   nextArrow: $reasonsNextBtn,
   responsive: [
     {
       breakpoint: 768,
       settings: {
-        slidesToShow: 3,
+        slidesToShow: 1,
         centerMode: false,
       }
     }

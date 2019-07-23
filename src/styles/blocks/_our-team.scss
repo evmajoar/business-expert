@@ -5,6 +5,10 @@
 .our-team {
   padding: 50px 0;
   background-color: $white;
+  overflow: hidden;
+  @include breakpoint(md) {
+    padding: 30px 0 0;
+  }
 
   &__container {
     flex-direction: column;
@@ -20,24 +24,51 @@
     width: 100%;
     max-width: 1030px;
     margin: 20px auto 0;
+    @include breakpoint(md) {
+      flex-direction: column;
+    }
   }
   
   &__buttons {
     margin-right: 45px;
+    @include breakpoint(el) {
+      margin-right: 0;
+    }
+    @include breakpoint(md) {
+      order: 1;
+    }
   }
 
   &__thumb {
     &-list {
       min-width: 270px;
+
+      .slick-list {
+        min-height: 400px;
+        padding: 15px !important ;
+        @include breakpoint(md) {
+          min-height: 100px;
+        }
+      }
+
+      .slick-slide {
+        padding: 10px !important;
+        min-height: 83px;
+      //  overflow: hidden;
+      }
+
+      .slick-current {
+        box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.1);
+      }
     }
 
     &-item {
-      display: flex;
+      display: flex !important;
       align-items: center;
       width: 100%;
-      padding: 14px 18px;
+      padding: 9px 10px;
       background-color: $white;
-      box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.1);
+      
       &:not(:first-of-type) {
         margin-top: 20px;
       }
@@ -77,6 +108,9 @@
     width: 100%;
     margin: 30px auto 0;
     z-index: 2;
+    @include breakpoint(md) {
+      display: none;
+    }
       
     &-counter {
       display: flex;
@@ -86,6 +120,7 @@
 
       &-this {
         font-weight: 700;
+        margin-right: 5px;
         color: #5F3189;
         font-size: 22px;
       }
@@ -147,6 +182,24 @@
   &__list {
     margin-top: 135px;
     padding-left: 160px;
+    @include breakpoint(el) {
+      margin-top: 160px;
+      padding-left: 100px;
+    }
+    @include breakpoint(md) {
+      padding-left: 0;
+      margin-top: 30px;
+    }
+
+    .slick-list {
+      overflow: visible;
+    }
+
+    .slick-slide {
+      padding: 0 10px !important;
+    //  min-height: 145px;
+      overflow: visible;
+    }
   }
 
   
@@ -154,11 +207,27 @@
     position: relative;
     display: flex;
     justify-content: space-between;
+    max-width: 585px;
+    min-height: 300px;
     padding: 48px 45px 48px 160px;
     background-color: $white;
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.12);
     &:not(:first-of-type) {
       margin-top: 50px;
+    }
+    @include breakpoint(el) {
+      max-width: 460px;
+      padding: 35px 25px 22px 156px;
+    }
+    @include breakpoint(lg) {
+      max-width: 360px;
+      padding-left: 120px;
+    }
+    @include breakpoint(md) {
+      flex-direction: column;
+      padding: 0;
+      max-width: 100%;
+      box-shadow: none;
     }
   }
 
@@ -168,9 +237,25 @@
     left: 0;
     bottom: 0;
     transform: translateX(-50%);
+    @include breakpoint(el) {
+      width: 232px;
+      height: 346px;
+    }
+    @include breakpoint(md) {
+      position: static;
+      transform: translateX(0);
+      margin: 0 auto;
+    }
   }
 
   &__desc {
+    @include breakpoint(md) {
+      padding: 40px 20px 20px 40px;
+      box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.12);
+    }
+    @include breakpoint(sm) {
+      padding: 40px 20px;
+    }
     &-title {
       font-size: 12px;
       line-height: 14px;
@@ -185,12 +270,22 @@
 
     &-text {
       margin-top: 10px;
+      &--small {
+        @include breakpoint(el) {
+          font-size: 12px;
+          line-height: 14px;
+        }
+      }
     }
 
     &-number {
       font-weight: 700;
       font-size: 22px;
       line-height: 30px;
+      @include breakpoint(el) {
+        font-size: 18px;
+        line-height: 22px;
+      }
     }
   }
 
