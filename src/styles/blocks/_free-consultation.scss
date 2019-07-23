@@ -4,6 +4,7 @@
 
 .free-consultation {
   background-color: $white;
+  overflow: hidden;
   @include breakpoint(lg) {
     background-color: $darkRed;
     background: radial-gradient(1431.90px at 116.07% 215.53%, $darkRed, $violet 100%);

@@ -5,6 +5,7 @@
 .guarantees {
   padding: 62px 0 110px;
   background-color: $white;
+  overflow: hidden;
   @include breakpoint(lg) {
     padding: 20px 0 70px;
   }

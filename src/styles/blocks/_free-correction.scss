@@ -4,6 +4,7 @@
 .free-correction {
   padding: 100px 0 107px;
   background-color: $white;
+  overflow: hidden;
   @include breakpoint(el) {
     padding: 55px 0 40px;
   }

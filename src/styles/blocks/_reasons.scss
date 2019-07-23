@@ -7,6 +7,7 @@
   color: $white;
   background: $grape url($imageDir + "reasons-bg.jpg") top left no-repeat;
   background-size: cover;
+  overflow: hidden;
   @include breakpoint(el) {
     padding: 44px 0;  
   }

@@ -5,6 +5,7 @@
 .questions {
   padding: 42px 0 88px;
   background-color: $white;
+  overflow: hidden;
   @include breakpoint(lg) {
     padding: 37px 0 70px;
   }

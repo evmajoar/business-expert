@@ -7,6 +7,7 @@
   color: $white;
   background: $grape url($imageDir + "quality-bg.jpg") center no-repeat;
   background-size: cover;
+  overflow: hidden;
 
   @include breakpoint(lg) {
     padding: 43px 0;

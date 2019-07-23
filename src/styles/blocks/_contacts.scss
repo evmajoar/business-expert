@@ -5,6 +5,7 @@
   position: relative;
   color: $black;
   background-color: $white;
+  overflow: hidden;
 
   &__container {
     @include breakpoint(md) {

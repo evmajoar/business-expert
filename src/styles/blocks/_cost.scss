@@ -6,6 +6,7 @@
   padding: 60px 0 70px;
   background: $darkRed url($imageDir + "cost-bg.jpg") no-repeat;
   background-size: cover;
+  overflow: hidden;
   @include breakpoint(lg) {
     padding: 55px 0 65px;
     background-image: url($imageDir + "cost-bg-992.jpg");
