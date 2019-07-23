@@ -14,6 +14,7 @@ $examples.on('init afterChange', function(event, slick){
   slidesToShow: 1,
   slidesToScroll: 1,
   centerMode: true,
+  adaptiveHeight: true,
   draggable: false,
   lazyLoad: 'ondemand',
   prevArrow: $examplePrevBtn,

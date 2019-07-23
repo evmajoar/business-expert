@@ -21,7 +21,7 @@ $reviews.slick({
     centerMode: true,
     lazyLoad:"ondemand",
     focusOnSelect: true,
-  //  mobileFirst: true,
+    //mobileFirst: true,
     responsive:[
       {
       breakpoint:769,

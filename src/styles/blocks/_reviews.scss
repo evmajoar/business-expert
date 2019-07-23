@@ -168,6 +168,13 @@
         display: flex;
         align-items: center;
       }
+
+      .slick-slide {
+        @include breakpoint(md) {
+          flex-shrink: 0;
+          width: 240px;
+        }
+      }
       
 
       .slick-current {
@@ -188,6 +195,10 @@
 
     &-item {
       display: flex !important;
+      @include breakpoint(md) {
+        width: 100%;
+        max-width: 100%;
+      }
     }
 
     &-image-wrapper {

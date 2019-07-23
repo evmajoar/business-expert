@@ -15,10 +15,7 @@
     max-width: 768px;
   }
   @include breakpoint(md) {
-    max-width: 576px;
-  }
-  @include breakpoint(sm) {
-    max-width: 480px;
+    max-width: 100%;
   }
 }
 
