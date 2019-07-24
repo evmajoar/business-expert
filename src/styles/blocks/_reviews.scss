@@ -3,15 +3,21 @@
 
 
 .reviews {
+  margin-top: -70px;
   padding: 186px 0 114px;
-  background: #fafafa url($imageDir + "reviews-bg.png") center no-repeat;
+  background: $white url($imageDir + "reviews-bg.png") top left no-repeat;
   background-size: cover;
   overflow: hidden;
 
-  @include breakpoint(md) {
-    padding: 80px 0 50px;
+  @include breakpoint(lg) {
+    padding: 172px 0 112px;
+    background-image: url($imageDir + "reviews-bg-992.png");
   }
 
+  @include breakpoint(md) {
+    padding: 160px 0 50px;
+    background-image: url($imageDir + "reviews-bg-768.png");
+  }
   &__container {
     @include breakpoint(sm) {
       padding: 0;
@@ -21,6 +27,16 @@
   &__title {
     width: 100%;
     text-align: center;
+    @include breakpoint(lg) {
+      width: 300px;
+      margin-left: 130px;
+      text-align: left;
+    }
+    @include breakpoint(md) {
+      width: 100%;
+      margin-left: 0;
+      text-align: center;
+    }
   }
 
   &__list {
