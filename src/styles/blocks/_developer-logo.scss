@@ -27,7 +27,7 @@
   @media (min-width: 769px) {
     &:hover .developer-logo__image,
     &:focus .developer-logo__image {
-      fill: url("#dev-gradient");
+      fill: #E31251;
     }
   } 
   @include breakpoint(md) {
@@ -36,7 +36,7 @@
     margin: 0 auto;
     text-align: center;
     &:active .developer-logo__image  {
-      fill: url("#dev-gradient");
+      fill: #E31251;
     }
   }
 }
