@@ -1,0 +1,36 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+
+.free-consultation {
+  background-color: $white;
+  overflow: hidden;
+  @include breakpoint(lg) {
+    background-color: $darkRed;
+    background: radial-gradient(1431.90px at 116.07% 215.53%, $darkRed, $violet 100%);
+  }
+  @include breakpoint(md) {
+    background: $white;
+  }
+
+  &__form {
+    max-width: 1030px;
+    margin: 0 auto;
+    padding: 42px 62px;
+    background-color: $darkRed;
+    background: radial-gradient(1431.90px at 116.07% 215.53%, $darkRed, $violet 100%);
+    border-radius: 25px;
+    @include breakpoint(el) {
+      padding: 42px 42px;
+    }
+    @include breakpoint(lg) {
+      padding: 20px 0;
+      background: none;
+    }
+    @include breakpoint(md) {
+      padding: 25px 30px;
+      background-color: $darkRed;
+      background: radial-gradient(1431.90px at 116.07% 215.53%, $darkRed, $violet 100%);
+    }
+  }
+}

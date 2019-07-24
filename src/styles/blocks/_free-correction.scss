@@ -1,0 +1,158 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+.free-correction {
+  padding: 100px 0 107px;
+  background-color: $white;
+  overflow: hidden;
+  @include breakpoint(el) {
+    padding: 55px 0 40px;
+  }
+  @include breakpoint(md) {
+    padding: 40px 0 60px;
+  }
+
+  &__container {
+    align-items: center;
+    @media (min-width: 1201px) {
+      max-width: 1030px;
+    }
+    @media (min-width: 993px) and (max-width: 1200px) {
+      justify-content: center;      
+    }   
+  }
+
+  &__wrapper {
+    max-width: 310px;
+    margin-right: 80px;
+    @include breakpoint(el) {
+      display: flex;
+      width: 100%;
+      max-width: 100%;
+      margin-right: 0;
+    }
+    @media (min-width: 993px) and (max-width: 1200px) {
+      justify-content: center;      
+    }  
+
+    @include breakpoint(md) {
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    @include breakpoint(el) {
+      max-width: 240px;
+      margin-right: 30px;
+    }
+    @include breakpoint(md) {
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+
+  &__paragraph {
+    margin-top: 44px;
+    @include breakpoint(el) {
+      max-width: 430px;
+      margin-top: 0;
+      font-size: 24px;
+      line-height: 24px;
+    }
+    @include breakpoint(md) {
+      margin-top: 50px;
+      max-width: 100%;
+    }
+
+  }
+
+  &__list {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    @include breakpoint(el) {
+      max-width: 640px;
+      margin-top: 50px;
+    }
+    @include breakpoint(md) {
+      max-width: 100%;
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &--circle {      
+      width: 273px;
+      height: 273px;
+      margin-right: 70px;
+      background: url($imageDir + "diagram-circle.svg") no-repeat;
+      @include breakpoint(md) {
+        margin-right: 0;
+      }      
+    }
+
+    &--part {
+      position: relative;
+      &::before {
+        @include pseudo;
+        top: -15px;
+        right: 75px;
+        width: 284px;
+        height: 1px;
+        background-color: #dddddd;
+        @include breakpoint(el) {
+          top: -20px;
+          right: 115px;
+        }
+        @include breakpoint(md) {
+          display: none;
+        }
+      }
+      @include breakpoint(el) {
+        flex-grow: 1;
+      }
+      @include breakpoint(md) {
+        width: 100%;
+        max-width: 310px;
+        margin: 25px auto 0;
+      }
+    }    
+  }
+
+  &__text {
+    display: flex;
+    max-width: 240px;
+    @include breakpoint(md) {
+      max-width: 100%;
+    }
+    &--small {
+      flex-direction: column;
+      max-width: 137px;
+      font-size: 12px;
+      line-height: 14px;
+      text-align: center;
+    }
+    
+  }
+
+  &__percent {
+    display: block;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 60px;
+    background: $mainGradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    &--circle {
+      margin-bottom: 10px;
+
+    }
+    &--part {
+      margin-right: 22px;
+    }
+  }
+}

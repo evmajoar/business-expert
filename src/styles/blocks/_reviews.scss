@@ -1,0 +1,251 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+
+.reviews {
+  margin-top: -70px;
+  padding: 186px 0 114px;
+  background: $white url($imageDir + "reviews-bg.png") top left no-repeat;
+  background-size: cover;
+  overflow: hidden;
+
+  @include breakpoint(lg) {
+    padding: 172px 0 112px;
+    background-image: url($imageDir + "reviews-bg-992.png");
+  }
+
+  @include breakpoint(md) {
+    padding: 160px 0 50px;
+    background-image: url($imageDir + "reviews-bg-768.png");
+  }
+  &__container {
+    @include breakpoint(sm) {
+      padding: 0;
+    }
+  }
+
+  &__title {
+    width: 100%;
+    text-align: center;
+    @include breakpoint(lg) {
+      width: 300px;
+      margin-left: 130px;
+      text-align: left;
+    }
+    @include breakpoint(md) {
+      width: 100%;
+      margin-left: 0;
+      text-align: center;
+    }
+  }
+
+  &__list {
+    max-width: 890px;
+    margin: 80px auto 0;
+    @include breakpoint(lg) {
+      max-width: 768px;
+    }
+    @include breakpoint(md) {
+      max-width: 100%;
+      margin-top: 50px;
+    }
+  }
+
+  &__item {
+    padding: 30px;
+    @include breakpoint(md) {
+      padding: 0;
+    }
+    &-wrapper {
+      position: relative;
+      display: flex;
+      width: 100%;      
+      margin-bottom: 30px;
+      background-color: $white;
+      box-shadow: 0px 4px 25px rgba(189, 189, 189, 0.95);
+      &::after {
+        @include pseudo;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 100%);
+        width: 0; 
+        height: 0;
+        border-left: 30px solid transparent;
+        border-right: 30px solid transparent;
+        border-top: 30px solid $white;
+      }
+
+      @include breakpoint(md) {
+        flex-direction: column;
+        padding: 35px 22px 20px;
+        box-shadow: none;
+      }
+    }    
+  }
+
+  &__video-wrapper {
+    position: relative;
+    max-width: 330px;
+    min-height: 260px;
+    margin-right: 90px;    
+    background-color: $grape;
+    background: $mainGradient;
+    @include breakpoint(md) {
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+
+  &__video {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+  }
+
+  &__play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &-icon {
+      fill: none;
+      transition: all .3s ease-out;
+      & circle {
+        stroke: $white;
+        transition: all .3s ease-out;
+      }
+      & path {
+        fill: $white;
+        transition: all .3s ease-out;
+      }
+    }
+
+    @media (min-width: 769px) {
+      &-icon {
+        &:hover,
+        &:focus {
+          & circle {
+            stroke: rgba(255,255,255,.5);
+          }
+          & path {
+            fill: rgba(255,255,255,.5);
+          }
+        }
+      }
+    }
+    @include breakpoint(md) {
+      &-icon {
+        &:active {
+          & circle {
+            stroke: rgba(255,255,255,.5);
+          }
+          & path {
+            fill: rgba(255,255,255,.5);
+          }
+        }
+      }
+    }
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 46px;
+    @include breakpoint(md) {
+      max-width: 330px;
+      margin: 20px auto;
+    }
+  }
+
+  &__thumb {
+
+    &-list {
+      display: flex;
+      align-items: center;
+      max-width: 830px !important;
+      min-height: 100px;
+      margin: 50px auto 0;
+      @include breakpoint(lg) {
+        max-width: 768px !important;
+      }
+      @include breakpoint(md) {
+        max-width: 100% !important;
+        margin-top: 10px;
+      }
+
+      .slick-list {
+        min-height: 100px;
+      }
+
+      .slick-track {
+        display: flex;
+        align-items: center;
+      }
+
+      .slick-slide {
+        @include breakpoint(md) {
+          flex-shrink: 0;
+          width: 240px;
+        }
+      }
+      
+
+      .slick-current {
+        & .reviews__thumb-content {
+          display: block;
+        }
+
+        & .reviews__thumb-image-wrapper {
+          margin-right: 20px;
+        }
+
+        & .reviews__thumb-image-wrapper {
+          width: 82px;
+          height: 82px;
+        }
+      }
+    }
+
+    &-item {
+      display: flex !important;
+      @include breakpoint(md) {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+
+    &-image-wrapper {
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 58px;
+      height: 58px;
+      margin: 0 auto;
+      border-radius: 50%;
+      transition: all .3s ease-out;
+    }
+
+    &-image {
+      width: 100%;
+    }
+
+    &-content {
+      display: none;
+      @include breakpoint(md) {
+        margin-right: auto;
+      }
+    }
+
+    &-name {
+      display: block;
+      font-weight: 700;
+      font-style: normal;
+      font-size: 22px;
+      line-height: 30px;
+    }
+  }  
+}

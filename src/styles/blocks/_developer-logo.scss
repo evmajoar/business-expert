@@ -1,0 +1,42 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+
+.developer-logo {
+  margin-top: 10px;
+  @include breakpoint(md) {
+    margin-top: 30px;
+    padding: 10px 0;
+  }
+}
+
+.developer-logo__image {
+  width: 97px; 
+  height: 21px;
+  fill: $white;
+  transition: all .3s ease-out;
+  @include breakpoint(md) {
+    width: 130px;
+    height: 30px;
+  }
+}
+
+.developer-logo__link {
+  margin-left: auto;
+  transition: all .3s ease-out;
+  @media (min-width: 769px) {
+    &:hover .developer-logo__image,
+    &:focus .developer-logo__image {
+      fill: url("#dev-gradient");
+    }
+  } 
+  @include breakpoint(md) {
+    display: block;
+    max-width: 160px;
+    margin: 0 auto;
+    text-align: center;
+    &:active .developer-logo__image  {
+      fill: url("#dev-gradient");
+    }
+  }
+}

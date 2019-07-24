@@ -1,0 +1,177 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+.contacts {
+  position: relative;
+  color: $black;
+  background-color: $white;
+  overflow: hidden;
+
+  &__container {
+    @include breakpoint(md) {
+      padding: 0;
+      margin: 0;
+      max-width: 100%;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  
+    max-width: 356px;
+    margin-left: 40px;
+    padding: 30px 49px 115px 46px;
+    overflow: hidden;
+    z-index: 2;
+    &::before {
+      @include pseudo;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      filter: blur(50px);
+      background: rgba(255, 255, 255, 0.9) url($imageDir +  "blur.jpg") center no-repeat;  
+      z-index: -1;
+      @include breakpoint(md) {
+        background: rgba(255, 255, 255, 0.9);
+      }
+    }
+
+    @include breakpoint(lg) {
+      max-width: 254px;
+      padding: 30px 10px 43px 20px;
+    }
+    @include breakpoint(md) {
+      max-width: 100%;      
+      width: 100%;
+      margin-top: -105px;
+      margin-left: 0;
+      margin-right: 0;
+      padding: 22px 17px 35px;
+    }
+  }
+
+  &__wrapper-mobile {
+    @include breakpoint(md) {
+      max-width: 340px;
+      margin: 0 auto;
+    }
+  }
+
+  &__logo-wrapper {
+    @include breakpoint(lg) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__title {
+    margin-top: 15px;
+    @include breakpoint(lg) {
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 24px;
+    }
+  }
+
+  &__brief {
+    margin-top: 23px;
+    text-align: left;
+    @include breakpoint(lg) {
+      max-width: 235px;
+      margin-top: 10px;
+      font-size: 12px;
+      line-height: 14px;
+    }
+    @include breakpoint(md) {
+      max-width: 100%;
+      margin-top: 15px;
+      margin-left: 0;
+      font-size: 18px;
+      line-height: 22px;
+    }    
+  }
+
+  &__address {
+    margin-top: 23px;
+    &-subtitle {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 700;
+    }
+    @include breakpoint(lg) {
+      max-width: 235px;
+      margin-top: 15px;      
+    }
+    @include breakpoint(md) {
+      max-width: 100%;
+    }   
+  }
+
+  &__list {
+    margin-top: 40px;
+    @include breakpoint(lg) {
+      margin-top: 15px;      
+    }
+  }
+
+  &__item {    
+    &:not(:first-of-type) {
+      margin-top: 13px;
+    }
+    @include breakpoint(lg) {
+      &:not(:first-of-type) {
+        margin-top: 10px;
+      }      
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    color: inherit;
+    
+    @media (min-width: 769px) {
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+
+    @include breakpoint(md) {
+      &:active {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 15px;
+    fill: $black;
+  }
+
+
+  &__map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $grape url($imageDir +  "map.jpg") center no-repeat;
+    background-size: cover;    
+    z-index: 0;
+    @include breakpoint(md) {
+      position: static;
+      width: 100%;
+      min-height: 280px;
+      background: $grape url($imageDir +  "map-768.jpg") center no-repeat;  
+    }
+  }
+}

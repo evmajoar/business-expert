@@ -1,0 +1,405 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  @include breakpoint(md) {
+    flex-direction: column;
+  }
+  
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    &--popup {
+      flex-direction: column;
+      width: 100%;
+    }    
+    &--free-consultation {      
+      width: calc(100% - 150px);
+      margin-right: 40px;
+    }
+    &--questions {
+      width: calc(100% - 248px);
+      margin-right: 50px;
+    }
+
+    @include breakpoint(lg) {
+      &--free-consultation {
+        margin-right: 15px;
+      }
+      &--questions {
+        width: calc(100% - 220px);
+        margin-right: 20px;
+      }
+    }
+    
+    @include breakpoint(md) {
+      flex-direction: column;
+      width: 100%;
+      &--free-consultation,
+      &--questions {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__button {    
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;  
+    border: none;
+    &--free-consultation {
+      max-width: 150px;
+    }
+    &--questions {
+      min-width: 248px;
+      min-height: 45px;
+      padding-left: 30px;
+      padding-right: 30px;
+      font-size: 14px;
+      line-height: 19px;
+      text-transform: uppercase;
+    }
+    &--white {
+      text-align: left;
+      color: $white;
+      background: transparent;
+      transition: all .3s ease-out;      
+    }
+    &--popup {
+      width: 100%;
+      max-width: 333px;
+      min-height: 83px;
+      margin-top: 25px;
+      font-weight: 700;
+      font-size: 22px;
+      text-transform: uppercase;
+      box-shadow: 0px 3px 15px rgba(80, 75, 157, 0.88);
+    }
+
+    @include breakpoint(lg) {
+      &--questions {
+        min-width: 220px;
+      }
+      &--popup {
+        max-width: 200px;
+        min-height: 54px;
+        margin-top: 30px;
+        font-size: 14px;
+      }
+    }
+    
+    @media (min-width: 769px) {
+      &--white {
+        &:hover,
+        &:focus {
+          transform: scale(1.08);
+        }
+      }
+    }
+
+    @include breakpoint(md) {
+      &--questions {
+        margin-top: 20px;
+        min-width: 290px;
+      }
+
+      &--white {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 17px;
+        padding: 9px 10px;
+        text-align: center;
+        color: $darkGrey;
+        background-color: #F2F2F2;
+        border-radius: 50px;
+        &:active {
+          box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+        }
+      }
+
+      &--popup {
+        max-width: 100%;
+        margin-top: 23px;
+      }
+    }    
+  }
+
+  &__item {
+    min-width: 150px;
+    &--free-consultation {
+      width: calc((100% - 30px)/3);
+      max-width: 190px;
+    }
+    &--wide {
+      flex-grow: 1;
+      max-width: 246px;
+    }
+
+    &--questions {
+      width: calc((100% - 50px)/2);
+    }
+
+    &:not(:last-of-type) {
+      margin-right: 15px;
+    }
+    &--popup {
+      width: 100%;      
+      &:not(:first-of-type) {
+        margin-top: 55px;
+      }
+      &:not(:last-of-type) {
+        margin-right: 0;
+      }
+
+      &-checkbox {
+        margin-top: 25px;
+      }      
+    }
+
+    @include breakpoint(lg) {
+      max-width: 152px;
+      &--wide {
+        flex-grow: 1;
+        max-width: 200px;
+      }
+      &--questions {
+        width: calc((100% - 20px)/2);
+        max-width: 220px;
+      }
+      &--popup {
+        max-width: 100%;
+        &:not(:first-of-type) {
+          margin-top: 38px;
+        }        
+      }
+    }
+    @include breakpoint(md) {
+      width: 100%;
+      max-width: 100%;
+      &:not(:last-of-type) {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+      &--popup {
+        margin-top: 0;
+        &:not(:first-of-type) {
+          margin-top: 18px;
+        }
+        &:not(:last-of-type) {
+          margin-bottom: 0;
+        }
+      }
+
+    }
+  }
+
+  &__label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 45px;
+    padding: 12px 20px;
+    border-radius: 50px;
+    border: 1px solid $darkGrey;
+    &--white {
+      border-color: $white;
+    }
+    &--popup {
+      min-height: 70px
+    }
+
+    &--gradient-border {
+      border: none;
+      background: $mainGradient;
+      &::before {
+        @include pseudo;
+        top: 1px;
+        right: 1px;
+        bottom: 1px;
+        left: 1px;
+        background: $white;
+        border-radius: inherit;
+      }
+    }
+
+    @include breakpoint(lg) {
+      &--small {
+        min-height: 32px;
+        padding: 8px 18px
+      }
+      &--popup {
+        min-height: 45px;
+      }
+    }
+  }
+
+  &__icon {
+    position: relative;
+    &--white {
+      fill: $white;
+    }
+    &--blue {
+      fill: #1C4F95;
+    }
+    
+    &--popup {
+      width: 28px;
+      height: 28px;
+      fill: url("#popup-gradient");
+    }
+
+    @include breakpoint(lg) {
+      &--small {
+        width: 12px;
+        height: 12px;
+      }
+      &--popup {
+        width: 18px;
+        height: 18px;
+      }
+    } 
+    @include breakpoint(md) {
+      &--small {
+        width: 20px;
+        height: 20px;
+      }
+    } 
+  }
+
+  &__input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 12px 20px 12px 50px;
+    font-size: 18px;
+    line-height: 22px;    
+    border: none;
+    border-radius: 50px;
+    background: transparent; 
+    z-index: 1; 
+    @include placeholder {
+      font-size: 18px;
+    //  line-height: 22px;
+      color: $darkGrey;      
+    }
+    @include placeholderHidden;
+
+    &--white {
+      color: $white;
+      @include placeholder {
+        color: $white;
+        opacity: 1;
+      }
+    }
+
+    &--blue {
+      color: #1C4F95;
+      @include placeholder {
+        color: #1C4F95;
+      }
+    }
+
+    &--popup {
+      padding: 15px 20px 15px 75px;
+      font-weight: 700;
+      font-size: 27px;
+      line-height: 37px;
+      @include placeholder {
+        font-weight: 700;
+        font-size: 27px;
+      //  line-height: 37px;
+        color: #bdbdbd;
+        opacity: 1;
+      }    
+    }
+
+    
+    @include breakpoint(lg) {
+      padding-right: 10px;
+      padding-left: 45px;
+      &--small {
+        padding-left: 40px;
+        font-size: 12px;
+        line-height: 14px;
+        @include placeholder {
+          font-size: 12px;
+      //    line-height: 4px;
+        } 
+      }
+      &--popup {
+        padding: 11px 20px 15px 50px;
+        font-size: 18px;
+        line-height: 22px;
+        @include placeholder {
+          font-size: 18px;
+        //  line-height: 22px;
+        }
+      }
+    }
+
+    @include breakpoint(md) {
+      padding-left: 50px;
+      &--small {        
+        font-size: 18px;
+        line-height: 22px;
+        @include placeholder {
+          font-size: 18px;
+      //    line-height: 12px;
+        } 
+      }
+    }
+  }
+
+  &__checkbox-label {
+    position: relative;
+    display: flex;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 55px;
+    cursor: pointer;
+    @include breakpoint(lg) {
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+
+  &__checkbox + .form__checkbox-indicator {
+    position: absolute;
+    top: 7px;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border: 1px solid $darkGrey;
+    @include breakpoint(lg) {
+      top: 0;
+    }
+    @include breakpoint(md) {
+      top: 50%;
+      margin-top: -15px;
+    }
+  }
+
+  &__checkbox:checked + .form__checkbox-indicator {
+    &::before {
+      @include pseudo;
+      top: 5px;
+      left: 5px;
+      width: 20px;
+      height: 10px;
+      border-left: 2px solid $darkGrey;
+      border-bottom: 2px solid $darkGrey;
+      transform: rotate(-45deg);
+    }
+  }
+}

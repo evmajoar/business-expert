@@ -1,0 +1,381 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+.estimate {
+  position: relative;
+  padding: 277px 0 93px;
+  color: $white;
+  background: $grape url($imageDir + "estimate-bg.jpg") top center no-repeat;
+  background-size: cover;
+  @include breakpoint(lg) {
+    padding: 216px 0 65px;
+    background-image: url($imageDir + "estimate-bg-992.jpg");
+  }
+  @include breakpoint(md) {
+    padding: 160px 0 60px;
+    background-image: url($imageDir + "estimate-bg-768.jpg");
+  }
+
+  &__container {
+    flex-direction: column;
+  }
+
+  &__title {
+    text-align: center;
+    @include breakpoint(md) {
+      text-align: left;
+    } 
+  }
+
+  &__brief {
+    max-width: 480px;
+    @include breakpoint(md) {
+      text-align: left;
+      margin-left: 0;
+    } 
+  }
+
+  &__form {
+    width: 100%;
+    margin-top: 22px;
+  }
+
+  &__wrapper {    
+    margin-left: 50px;
+    @include breakpoint(el) {
+      margin-left: 0;
+    }
+    @include breakpoint(lg) {
+      margin-left: 50px;
+    }
+    @include breakpoint(md) {
+      margin-left: 0;
+    } 
+  }
+
+  &__subtitle {
+    font-weight: 700;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;   
+  }
+
+  &__item {
+    width: calc((100% - 120px)/4);
+    max-width: 240px;
+    @include breakpoint(el) {
+      width: calc((100% - 80px)/4);
+    }
+    @include breakpoint(lg) {
+      width: calc((100% - 40px)/2);
+      max-width: 100%;
+      margin-top: 20px;
+      &--checkboxes,
+      &--name {
+        width: 100%;
+      }      
+      &--name {
+        margin-top: 0;        
+      }
+    }
+    @include breakpoint(md) {
+      width: 100%;
+      &--checkboxes {
+        &-communicate {
+          margin-top: 50px;
+        }
+      }      
+    }
+  }
+
+  &__sublist {
+    &--checkboxes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    @include breakpoint(lg) {
+      &--checkboxes {
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  &__subitem {
+    &--checkbox {
+      width: calc((100% - 10px)/2);
+      margin-top: 10px;      
+    }
+    @include breakpoint(lg) {
+      &--checkbox {
+        width: 100%;
+        max-width: 140px;
+        margin-top: 15px;
+        &:not(:last-of-type) {
+          margin-right: 20px;
+        }
+        &-plan {
+          width: calc((100% - 10px)/2);
+          max-width: 290px;
+        }
+      }
+    }
+    @include breakpoint(md) {
+      &--checkbox {
+        &-plan {
+          width: 100%;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 18px;
+    line-height: 22px;
+    color: $white;
+    cursor: pointer;
+    &--lower {
+      margin-top: 10px;
+    }
+    &--checkbox {
+      position: relative;
+      padding-left: 36px;
+      &-big {
+        padding-left: 45px;
+      }
+      &-shift {
+        margin-left: 20px;
+      }
+    }
+    &-text {
+      &--confirm {
+        max-width: 212px;
+      }
+    }
+
+    @include breakpoint(lg) {
+      &--name {
+        width: calc((100% - 40px)/2);
+      }
+      &--checkbox {
+        &-shift {
+          margin-left: 0;
+        }
+      }
+      &-text {
+        &--confirm {
+          max-width: 100%;
+        }
+      }
+    }
+    @include breakpoint(md) {
+      &--name {
+        width: 100%;
+      }
+      &--lower {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__input {
+    min-height: 28px;
+    padding: 5px 10px 5px 0;
+    font-size: 18px;
+    line-height: 22px;
+    color: $white;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid $white;
+    &--project-point {
+      margin-top: 22px;
+    }
+    &--lower {
+      margin-top: 12px;
+    }
+
+    &--checkbox + .estimate__checkbox-indicator {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 21px;
+      height: 21px;
+      border: 1px solid $white;
+      &--big {
+        top: 10px;
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    &--checkbox:checked + .estimate__checkbox-indicator {
+      &::before {
+        @include pseudo;
+        top: 3px;
+        left: 3px;
+        width: 14px;
+        height: 7px;
+        border-left: 1px solid $white;
+        border-bottom: 1px solid $white;
+        transform: rotate(-45deg);
+      }
+
+      &--big {
+        &::before {
+          top: 5px;
+          left: 5px;
+          width: 20px;
+          height: 10px;
+          border-width: 2px;
+        }
+      }
+    }
+    
+    @include breakpoint(el) {
+      &--project-point {
+        margin-top: 44px;
+      }
+    }
+
+    @include breakpoint(lg) {
+      &--project-point {
+        margin-top: 10px;
+      }
+      &--lower {
+        margin-top: 10px;
+      }
+      margin-top: 10px;
+    }
+    @include breakpoint(md) {
+      &--project-point {
+        margin-top: 0;
+      }
+      &--lower {
+        margin-top: 0;
+      }
+      margin-top: 0;
+    }
+  }
+
+  &__ordered-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__main-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 45px;
+    @include breakpoint(lg) {
+      flex-direction: column;
+    }
+    @include breakpoint(md) {
+      margin-top: 55px;
+    }
+  }
+
+  &__column {
+    width: calc((100% - 40px)/2);
+    @include breakpoint(el) {
+      width: calc((100% - 20px)/2);
+    }
+    @include breakpoint(lg) {
+      width: 100%;
+      &--right {
+        margin-top: 40px;
+      } 
+    }
+    @include breakpoint(md) {
+      &--right {
+        margin-top: 30px;
+      } 
+    }
+  }
+
+  &__main-item {
+    display: flex;
+    align-items: flex-start;
+    &:not(:first-of-type) {
+      margin-top: 40px;
+    }
+    &-number {
+      margin-top: -5px;
+      margin-right: 20px;
+      font-size: 42px;
+      line-height: 46px;
+    }
+    &-content {
+      flex-grow: 1;
+    }
+    @include breakpoint(el) {
+      &-number {
+        margin-right: 10px;
+      }
+    }
+    @include breakpoint(lg) {      
+      &-number {
+        margin-right: 20px;
+      }
+    }
+    @include breakpoint(md) {
+      &:not(:first-of-type) {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  &__confirm-wrapper {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 15px;
+    margin-left: 55px;
+    @include breakpoint(el) {
+      margin-left: 44px;
+    }
+    @include breakpoint(lg) {
+      margin-top: 40px;
+      margin-left: 55px;
+    }
+    @include breakpoint(md) {
+      flex-direction: column;
+      margin-left: 0;
+      margin-top: 30px;
+    }    
+  }
+
+  &__button {
+    min-width: 200px;
+    margin-top: 10px;
+    margin-left: 15px;
+    font-weight: 700;
+    min-height: 54px;
+    font-size: 18px;
+    line-height: 22px;
+    @include breakpoint(lg) {
+      margin-top: 0;
+    }
+    @include breakpoint(md) {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      margin-left: 0;
+      box-shadow: 0px 2px 25px rgba(80, 75, 157, 0.88);
+    }
+  }
+
+  &__link {
+    font-weight: 700;
+    color: inherit;
+  }
+}

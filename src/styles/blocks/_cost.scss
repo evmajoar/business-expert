@@ -1,0 +1,145 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+
+.cost {
+  padding: 60px 0 70px;
+  background: $darkRed url($imageDir + "cost-bg.jpg") no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  @include breakpoint(lg) {
+    padding: 55px 0 65px;
+    background-image: url($imageDir + "cost-bg-992.jpg");
+  }
+  @include breakpoint(md) {
+    padding: 60px 0 85px;
+    background-image: url($imageDir + "cost-bg-768.jpg");
+  }
+
+
+  &__title {
+    margin: 0 auto;
+    color: $white;
+    text-align: center;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1030px;
+    min-height: 335px;
+    margin: 70px auto 0;
+    @include breakpoint(lg) {
+      flex-direction: column;
+      margin: 65px auto 0;
+    }
+    @include breakpoint(md) {
+      margin: 30px auto 0;
+    }      
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc((100% - 40px)/3);
+    padding: 40px 37px 51px;
+    background-color: $white;
+    box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.25);
+    @include breakpoint(lg) {
+      width: 100%;
+      max-width: 335px;
+      margin-left: auto;
+      margin-right: auto;
+      &:not(:first-of-type) {
+        margin-top: 33px;
+      }
+    }
+    @media (max-width: 374px) {
+      padding: 30px 15px 30px;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    fill: $darkGrey;
+    fill: url("#cost-gradient");
+  }
+
+  &__subtitle {
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 30px;
+    text-align: center;
+    color: $darkRed;
+    background: $mainGradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__numbers {
+    display: block;
+    margin-top: 7px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  &__paragraph {
+    margin-top: 30px; 
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  &__sublist {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  &__subitem {
+    position: relative;
+    padding-left: 35px;
+    &::before {
+      @include pseudo;
+      top: 5px;
+      left: 0;
+      width: 20px;
+      height: 10px;
+      border-left: 2px solid $darkGrey;
+      border-bottom: 2px solid $darkGrey;
+      transform: rotate(-45deg);
+    }
+
+    &:not(:first-of-type) {
+      margin-top: 10px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    margin-top: auto;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: $darkRed;
+    border-radius: 50px;
+    background: $mainGradient;
+    &::before {
+      @include pseudo;
+      top: 1px;
+      right: 1px;
+      bottom: 1px;
+      left: 1px;
+      background: $white;
+      border-radius: 50px;
+      z-index: -1;
+    }
+  }
+}

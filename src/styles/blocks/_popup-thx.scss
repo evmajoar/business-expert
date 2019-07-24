@@ -1,0 +1,55 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+
+.popup-thx { 
+  display: none;
+  &--opened {
+    display: block;    
+  } 
+  
+  max-width: 700px;
+  padding: 114px 118px 174px;
+  @include breakpoint (lg) {
+    max-width: 460px;
+    padding: 74px 80px 115px;    
+  }
+  @include breakpoint(md) {
+    max-width: 300px;
+    padding: 87px 53px 76px;
+  } 
+
+  &__paragraph {
+    margin-top: 60px;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 36px;    
+    color: #737373;
+    text-align: center;
+    @include breakpoint(lg) {
+      margin-top: 40px;
+      font-size: 18px;
+      line-height: 22px;
+    }
+    @include breakpoint(md) {
+      margin-top: 37px;
+    }
+  }
+
+  &__gratitude {
+    display: block;
+    margin-bottom: 35px;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 70px;
+    color: #2B213A;
+    @include breakpoint(lg) {
+      margin-bottom: 20px;
+      font-size: 42px;
+      line-height: 46px;
+    }
+    @include breakpoint(md) {
+      margin-bottom: 24px;
+    }
+  }
+}

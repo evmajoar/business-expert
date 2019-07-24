@@ -1,0 +1,101 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+
+.output {
+  padding: 30px 0 56px;
+  margin-top: -70px;
+//  background-color: $white;
+  overflow: hidden;
+  @include breakpoint(el) {
+    margin-top: -30px;
+    padding: 50px 0;
+  }
+  @include breakpoint(lg) {
+    padding: 30px 0 30px;
+    margin-top: 0;
+  }
+
+  &__container {
+    padding-left: 85px;
+    
+    @include breakpoint(el) {
+      padding-left: $gutter;
+      justify-content: center;
+    }
+    @include breakpoint(md) {
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    &--mobile {
+      display: none;
+    }
+    @include breakpoint(md) {
+      display: none;
+      &--mobile {
+        display: block;
+        text-align: center;
+      }
+    }
+  }
+
+  &__image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 65px;
+    @include breakpoint(el) {
+      margin-right: 15px;
+    }
+    @include breakpoint(md) {
+      margin-top: 35px;
+      margin-right: 0;
+    }
+    @media (max-width: 393px) {
+      width: 100%;
+    }
+  }
+
+  &__wrapper {
+    background-color: $white;
+  }
+
+
+  &__list {
+    max-width: 360px;
+    margin-top: 25px;
+    counter-reset: number;
+    @include breakpoint(md) {
+      margin: 15px auto 0;
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    &:not(:first-of-type) {
+      margin-top: 15px;
+    }
+    &::before {
+      content: "0" counter(number);
+      counter-increment: number;
+      margin-right: 20px;
+      font-weight: 600;
+      font-size: 42px;
+      line-height: 46px;
+      color: #cccccc;
+      transition: all .3s ease-out;
+    }
+
+    &:hover {
+      &::before {
+        background: $mainGradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+}

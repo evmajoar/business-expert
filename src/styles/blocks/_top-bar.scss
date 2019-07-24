@@ -1,0 +1,159 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+
+.top-bar {
+  &__container {
+    padding-left: 85px;
+    @include breakpoint(el) {
+      padding-left: $gutter;
+    }
+    @include breakpoint(md) {
+      align-items: center;
+    }
+    @media (max-width: 374px) {
+      flex-direction: column;     
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: calc(100% - 185px);
+    margin-left: auto;
+    @include breakpoint(lg) {
+      align-items: flex-start;
+      margin-top: 20px;
+    }
+    @include breakpoint(md) {
+      flex-direction: column;
+      margin-top: 0;
+    }
+    @media (max-width: 374px) {
+      width: 100%;
+      margin-top: 20px;
+      margin-right: auto;   
+    }
+  }
+
+  &__item {
+    &--address {
+      max-width: 160px;
+      margin-right: 30px;
+      @include breakpoint(el) {
+        margin-right: 20px;
+      }
+      @include breakpoint(lg) {
+        max-width: 115px;
+      }
+      @include breakpoint(md) {
+        display: none;
+      }
+    }
+    &--email {
+      margin-right: 35px;
+      @include breakpoint(el) {
+        margin-right: 20px;
+      }
+      @include breakpoint(lg) {
+        min-width: 146px;
+      }
+      @include breakpoint(md) {
+        margin-right: 0;
+        margin-left: auto;
+      }
+      @media (max-width: 374px) {
+        margin-right: auto;   
+      }
+    }
+    &--phone {
+      display: flex;
+      @include breakpoint(lg) {
+        flex-direction: column;
+      }
+      @include breakpoint(md) {
+        margin-top: 10px;
+        margin-right: 0;
+        margin-left: auto;
+      }
+      @media (max-width: 374px) {
+        margin-right: auto;   
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    color: inherit;
+    &--phone {
+      margin-right: 45px;
+    }
+    @include breakpoint(el) {
+      &--phone {
+        margin-right: 20px;
+      }
+    }
+    @include breakpoint(lg) {
+      &--phone {
+        margin-right: 0;
+        margin-left: auto;
+      }
+    }
+    @media (min-width: 769px) {
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+    @include breakpoint(md) {
+      &:active {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    fill: $white;
+    &--email {
+      margin-right: 32px;
+      @include breakpoint(el) {
+        margin-right: 10px;
+      }
+    }
+    &--phone {
+      margin-right: 16px;
+      @include breakpoint(el) {
+        margin-right: 10px;
+      }
+      @include breakpoint(md) {
+        margin-right: 8px;
+      }
+    }
+    &--arrow {
+      margin-left: 20px;
+      fill: $darkGrey;
+      @include breakpoint(lg) {
+        display: none;
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $darkGrey;
+    background-color: $white;
+    @include breakpoint(lg) {
+      justify-content: center;
+      min-width: 170px;
+      margin-top: 15px;
+    }
+    @include breakpoint(md) {
+      min-width: 150px;
+    }
+  }  
+}
