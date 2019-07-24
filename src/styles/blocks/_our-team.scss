@@ -12,6 +12,9 @@
 
   &__container {
     flex-direction: column;
+    @include breakpoint(sm) {
+      padding: 0;
+    }
   }
 
   &__title {
@@ -56,6 +59,9 @@
         padding: 10px !important;
         min-height: 83px;
       //  overflow: hidden;
+        @media (max-width: 480px) {
+          max-width: 230px;
+        }
       }
 
       .slick-current {
@@ -201,6 +207,9 @@
       padding: 0 10px !important;
     //  min-height: 145px;
       overflow: visible;
+      @include breakpoint(md) {
+        padding: 0 !important;
+      }
     }
   }
 
@@ -230,7 +239,7 @@
       padding: 0;
       max-width: 100%;
       box-shadow: none;
-      overflow: hidden;
+    // overflow: hidden;
     }
   }
 
